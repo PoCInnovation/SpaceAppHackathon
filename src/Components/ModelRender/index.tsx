@@ -1,17 +1,21 @@
-import React, { useRef, Suspense } from 'react';
-import { Canvas } from 'react-three-fiber';
+import React, { Suspense } from 'react';
+import { Canvas, useLoader } from 'react-three-fiber';
 
-import Model from './Cran';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+
+function Duck() {
+  const gltf = useLoader(GLTFLoader, 'Duck.glb');
+  return <primitive object={gltf.scene} position={[0, 0, 0]} />;
+}
 
 export default function ModelRender(): JSX.Element {
   return (
-    <Canvas>
-      <ambientLight intensity={0.5} />
-      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-      <pointLight position={[-10, -10, -10]} />
-      <Suspense fallback={null}>
-        <Model />
-      </Suspense>
-    </Canvas>
+    <div className="Duck">
+      <Canvas camera={{ position: [0, 0, 10] }}>
+        <ambientLight intensity={0.5} />
+        <spotLight intensity={0.8} position={[300, 300, 400]} />
+        <Suspense fallback={null}><Duck /></Suspense>
+      </Canvas>
+    </div>
   );
 }

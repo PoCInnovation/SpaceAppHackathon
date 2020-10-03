@@ -11,6 +11,7 @@
     "@types/node": "^12.12.62",
     "@types/react": "^16.9.50",
     "@types/react-dom": "^16.9.8",
+    "drei": "^1.5.7",
     "eslint-config-airbnb-typescript": "^11.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

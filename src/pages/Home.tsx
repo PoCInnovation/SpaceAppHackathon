@@ -23,8 +23,10 @@ function Home(): JSX.Element {
     <Container style={{ flexDirection: 'column', height: window.innerHeight }}>
       <Header />
       <Container style={{ flexDirection: 'row', width: '100%', height: '100%' }}>
-        <LeftView style={{ backgroundColor: 'red' }} />
-        <RightView style={{ backgroundColor: 'yellow' }} />
+        <LeftView />
+        <RightView>
+          <img alt="astronaute" src="/astro_1.png" style={{ width: '100%', height: '100%' }} />
+        </RightView>
       </Container>
     </Container>
   );

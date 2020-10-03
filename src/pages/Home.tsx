@@ -64,8 +64,14 @@ function Home(): JSX.Element {
         </RightView>
       </Container>
       <Container style={{ flexDirection: 'row', height: '50%', color: 'white', backgroundImage: 'url(/moon.png)', backgroundSize: 'cover', backgroundPosition: 'bottom', backgroundRepeat: 'no-repeat  ' }}>
-        <LeftView></LeftView>
-        <RightView></RightView>
+        <LeftView style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <iframe width="700" height="405" src="https://www.youtube.com/embed/pVddPNSzjZI"  allowFullScreen />
+        </LeftView>
+        <RightView>
+          <Astro style={{ right: '10%', top: '5%' }}>
+            <img alt="astronaute" src="/astro_2.png" style={{ width: '90%', height: '90%' }} />
+          </Astro>
+        </RightView>
       </Container>
     </Container>
   );

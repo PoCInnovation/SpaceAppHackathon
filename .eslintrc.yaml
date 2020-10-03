@@ -1,0 +1,26 @@
+parser: "@typescript-eslint/parser"
+
+parserOptions:
+  ecmaVersion: 6
+  project: tsconfig.json
+
+env:
+  browser: true
+
+extends:
+  - airbnb-typescript
+  - airbnb/hooks
+  - plugin:@typescript-eslint/recommended
+
+rules:
+  react/react-in-jsx-scope: off
+  react/prop-types: ["error", { "ignore": ["navigation"] }]
+  no-alert: off
+  no-console: off
+  react/jsx-props-no-spreading: off
+  global-require: off
+  object-curly-newline: off
+  react/require-default-props: off
+  react/jsx-one-expression-per-line: off
+  import/prefer-default-export: off
+  "@typescript-eslint/explicit-function-return-type": "off"

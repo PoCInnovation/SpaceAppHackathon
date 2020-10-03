@@ -1,12 +1,13 @@
 import React from 'react';
 import { Header } from '../components/Header';
 
-function App(): JSX.Element {
+function Product(): JSX.Element {
   return (
-    <div className="App">
+    <div>
       <Header />
+      <p>Product</p>
     </div>
   );
 }
 
-export default App;
+export default Product;

@@ -1,15 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Header } from '../components/Header';
 
-const Home = (): JSX.Element => (
-  <div>
-    <p>Hello Space App</p>
-    <Link to="/contact">
-      <button type="button">
-        <span>Login</span>
-      </button>
-    </Link>
-  </div>
-);
+function Home(): JSX.Element {
+  return (
+    <div>
+      <Header />
+      <p>Home</p>
+    </div>
+  );
+}
 
 export default Home;

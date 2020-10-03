@@ -1,13 +1,26 @@
 import React from 'react';
 import './Header.css';
+import { Link } from 'react-router-dom';
 
 const Header = () : JSX.Element => (
   <div className="header">
     <ul className="navbar">
-      <li className="nav-element"><a href="#">Home</a></li>
-      <li className="nav-element"><a href="#">Idea</a></li>
-      <li className="nav-element"><a href="#">Contact</a></li>
-   </ul>
+      <Link to="/" style={{ textDecoration: 'none' }}>
+        <li className="nav-element">
+          <a>idea</a>
+        </li>
+      </Link>
+      <Link to="/product" style={{ textDecoration: 'none' }}>
+        <li className="nav-element">
+          <a>product</a>
+        </li>
+      </Link>
+      <Link to="/contact" style={{ textDecoration: 'none' }}>
+        <li className="nav-element">
+          <a>contact</a>
+        </li>
+      </Link>
+    </ul>
   </div>
 );
 

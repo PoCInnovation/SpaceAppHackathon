@@ -7,28 +7,31 @@ const Header = () : JSX.Element => {
 
   return (
     <div className="header">
-      <ul className="navbar">
-        <Link to="/" style={{ textDecoration: 'none' }}>
-          <li className={location.pathname === '/' ? 'nav-element-current' : 'nav-element'}>
-            <span>idea</span>
-          </li>
-        </Link>
-        <Link to="/product" style={{ textDecoration: 'none' }}>
-          <li className={location.pathname === '/product' ? 'nav-element-current' : 'nav-element'}>
-            <span>product</span>
-          </li>
-        </Link>
-        <a
-          href="https://www.notion.so/PoC-3421d1be6ef64662a992e20215637b03"
-          rel="noreferrer"
-          target="_blank"
-          style={{ textDecoration: 'none' }}
-        >
-          <li className={location.pathname === '/contact' ? 'nav-element-current' : 'nav-element'}>
-            <span>contact</span>
-          </li>
-        </a>
-      </ul>
+      <div className="logo">Caelus</div>
+      <div className="header-nav">
+        <ul className="navbar">
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            <li className={location.pathname === '/' ? 'nav-element-current' : 'nav-element'}>
+              <span>idea</span>
+            </li>
+          </Link>
+          <Link to="/product" style={{ textDecoration: 'none' }}>
+            <li className={location.pathname === '/product' ? 'nav-element-current' : 'nav-element'}>
+              <span>product</span>
+            </li>
+          </Link>
+          <a
+            href="https://www.notion.so/PoC-3421d1be6ef64662a992e20215637b03"
+            rel="noreferrer"
+            target="_blank"
+            style={{ textDecoration: 'none' }}
+          >
+            <li className={location.pathname === '/contact' ? 'nav-element-current' : 'nav-element'}>
+              <span>contact</span>
+            </li>
+          </a>
+        </ul>
+      </div>
     </div>
   );
 };

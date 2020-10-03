@@ -1,15 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
 .header {
-  display: flex;
   font-family: 'Secular One', sans-serif;
   width: 100%;
   position: fixed;
   background: black;
   color: white;
+  z-index: 3;
+}
+
+
+.header-nav {
+  display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  z-index: 3;
+}
+
+.logo {
+  margin: 20px 70px;
+  float: left;
+  font-size: 3.5em;
+  font-family: 'Righteous', 'Secular One', sans-serif;
 }
 
 .navbar {

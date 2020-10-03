@@ -4,11 +4,12 @@
   display: flex;
   font-family: 'Secular One', sans-serif;
   width: 100%;
-  position: sticky;
+  position: fixed;
   background: black;
   color: white;
   align-items: flex-end;
   justify-content: flex-end;
+  z-index: 3;
 }
 
 .navbar {

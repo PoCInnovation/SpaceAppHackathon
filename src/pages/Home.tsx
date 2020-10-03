@@ -6,6 +6,7 @@ const Container = styled.div`
   background: black;
   display: flex;
   border: none;
+  overflow-x: hidden;
 `;
 
 const LeftView = styled.div`
@@ -14,29 +15,52 @@ const LeftView = styled.div`
 `;
 
 const RightView = styled.div`
-  width: 40%;
+  width: 50%;
   height: 100%;
+  position: relative;
 `;
 
 const LogoView = styled.a`
-  position: absolute;
+  position: fixed;
   left: 0;
   bottom: 0;
   margin-left: 20px;
   margin-bottom: 20px;
 `;
 
+const Astro = styled.div`
+  position: absolute;
+`;
+
+const Title = styled.h1`
+  font-size: 5em;
+  z-index: 2;
+  color: white;
+`;
+
+const SubTitle = styled.h2`
+  font-size: 2em;
+  z-index: 2;
+  color: white;
+  text-align: justify;
+`;
+
 function Home(): JSX.Element {
   return (
-    <Container style={{ flexDirection: 'column', height: window.innerHeight }}>
+    <Container style={{ flexDirection: 'column', height: window.innerHeight * 2 }}>
       <Header />
       <LogoView href="https://github.com/PoCInnovation" rel="noreferrer" target="_blank">
         <img alt="poc" src="/logo.png" style={{ width: '20%', height: '20%' }} />
       </LogoView>
-      <Container style={{ flexDirection: 'row', width: '100%', height: '100%' }}>
-        <LeftView />
+      <Container style={{ flexDirection: 'row', width: '100%', height: '100%', marginTop: '5%' }}>
+        <LeftView>
+          <Title style={{ marginLeft: '10%', marginTop: '10%' }}>Test</Title>
+          <SubTitle style={{ marginLeft: '10%' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tincidunt fringilla augue, at pulvinar tellus egestas ac. Cras suscipit viverra tortor non interdum. Donec efficitur volutpat lacinia. </SubTitle>
+        </LeftView>
         <RightView>
-          <img alt="astronaute" src="/astro_1.png" style={{ width: '100%', height: '100%' }} />
+          <Astro style={{ right: '10%' }}>
+            <img alt="astronaute" src="/astro_1.png" />
+          </Astro>
         </RightView>
       </Container>
     </Container>

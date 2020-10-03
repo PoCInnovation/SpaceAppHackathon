@@ -47,21 +47,25 @@ const SubTitle = styled.h2`
 
 function Home(): JSX.Element {
   return (
-    <Container style={{ flexDirection: 'column', height: window.innerHeight * 2 }}>
+    <Container style={{ flexDirection: 'column', height: window.innerHeight * 1.8 }}>
       <Header />
       <LogoView href="https://github.com/PoCInnovation" rel="noreferrer" target="_blank">
         <img alt="poc" src="/logo.png" style={{ width: '20%', height: '20%' }} />
       </LogoView>
-      <Container style={{ flexDirection: 'row', width: '100%', height: '100%', marginTop: '5%' }}>
+      <Container style={{ flexDirection: 'row', width: '100%', height: '50%', marginTop: '5%', backgroundImage: 'url(/star.png)' }}>
         <LeftView>
           <Title style={{ marginLeft: '10%', marginTop: '10%' }}>Test</Title>
           <SubTitle style={{ marginLeft: '10%' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tincidunt fringilla augue, at pulvinar tellus egestas ac. Cras suscipit viverra tortor non interdum. Donec efficitur volutpat lacinia. </SubTitle>
         </LeftView>
         <RightView>
           <Astro style={{ right: '10%' }}>
-            <img alt="astronaute" src="/astro_1.png" />
+            <img alt="astronaute" src="/astro_1.png" style={{ width: '90%', height: '90%' }} />
           </Astro>
         </RightView>
+      </Container>
+      <Container style={{ flexDirection: 'row', height: '50%', color: 'white', backgroundImage: 'url(/moon.png)', backgroundSize: 'cover', backgroundPosition: 'bottom', backgroundRepeat: 'no-repeat  ' }}>
+        <LeftView></LeftView>
+        <RightView></RightView>
       </Container>
     </Container>
   );

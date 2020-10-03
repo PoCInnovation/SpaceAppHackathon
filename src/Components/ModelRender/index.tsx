@@ -1,5 +1,5 @@
-import React, { Suspense } from 'react';
-import { Canvas, useLoader } from 'react-three-fiber';
+import React, { Suspense, useRef } from 'react';
+import { Canvas, useFrame, useLoader } from 'react-three-fiber';
 import { OrbitControls } from 'drei';
 
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
@@ -7,7 +7,20 @@ import './index.css';
 
 function Model(): JSX.Element {
   const gltf = useLoader(GLTFLoader, 'Duck.gltf');
-  return <primitive object={gltf.scene} position={[0, 0, 0]} />;
+  const modelRef = useRef<any>();
+
+  useFrame(({ gl, scene, camera }) => {
+    gl.render(scene, camera);
+    if (modelRef.current) modelRef.current.rotation.y += 0.01;
+  }, 1);
+
+  return (
+    <primitive
+      object={gltf.scene}
+      position={[0, 0, 0]}
+      ref={modelRef}
+    />
+  );
 }
 
 export default function ModelRender(): JSX.Element {
@@ -33,6 +46,8 @@ export default function ModelRender(): JSX.Element {
         <Suspense fallback={null}>
           <mesh
             scale={[10, 10, 10]}
+            onPointerOver={() => console.log('coucouo')}
+            onClick={(e) => console.log(e)}
           >
             <Model />
           </mesh>

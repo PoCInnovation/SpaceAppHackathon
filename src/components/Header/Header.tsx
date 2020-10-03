@@ -18,11 +18,16 @@ const Header = () : JSX.Element => {
             <span>product</span>
           </li>
         </Link>
-        <Link to="/contact" style={{ textDecoration: 'none' }}>
+        <a
+          href="https://www.notion.so/PoC-3421d1be6ef64662a992e20215637b03"
+          rel="noreferrer"
+          target="_blank"
+          style={{ textDecoration: 'none' }}
+        >
           <li className={location.pathname === '/contact' ? 'nav-element-current' : 'nav-element'}>
             <span>contact</span>
           </li>
-        </Link>
+        </a>
       </ul>
     </div>
   );

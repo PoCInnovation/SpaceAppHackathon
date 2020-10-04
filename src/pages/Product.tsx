@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 import { Header } from '../components/Header';
 import { SlideShow } from '../components/SlideShow';
@@ -11,9 +11,16 @@ const Container = styled.div`
 `;
 
 const StoryView = styled.div`
+  position: relative;
   text-align: center;
   height: ${window.innerHeight - 111}px;
   color: white;
+`;
+
+const StoryP = styled.p`
+  font-size: 20px;
+  line-height: 25px;
+  margin-bottom: 1.5em;
 `;
 
 const LogoView = styled.a`
@@ -31,9 +38,23 @@ const Title = styled.h1`
    margin: 1em 0 1em 0;
 `;
 
+const MainPb = styled.h3`
+  margin-top: 2.5em;
+  font-size: 2.5em;
+`;
+
+const ArrowView = styled.a`
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  z-index: 1;
+  cursor: pointer;
+`;
+
 
 function Product(): JSX.Element {
   const height = window.innerHeight - 111;
+  const endRef = useRef<HTMLDivElement>(document.createElement('div'));
 
   return (
     <Container style={{ flexDirection: 'column', height: window.innerHeight * 2 }}>
@@ -46,22 +67,36 @@ function Product(): JSX.Element {
         background: 'black url(/star.png) fixed' }}
       >
         <StoryView>
-          <Title>Test</Title>
+          <Title>HISTOIRE</Title>
           <div style={{ margin: 'auto', width: '85%' }}>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas 
-              risus eu arcu congue iaculis. Vestibulum arcu tortor, vestibulum fringilla
-              congue non, condimentum id nulla. Ut porttitor, turpis ac scelerisque finibus,
-              mi diam congue magna, eu blandit ligula turpis eget velit. Morbi enim mi, 
-              venenatis eu eros non, fringilla molestie augue. Morbi pharetra felis quis 
-              purus dictum faucibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. 
-              Curabitur quis pharetra quam. Integer eu rhoncus ante.
-            </p>
+            <StoryP>
+              Vous êtes une agence spatiale et le programme Artémis est en place. Depuis la Terre,
+              vous supervisez une mission sur la Lune. Votre groupe d'astronautes se prépare pour
+              aller effectuer une analyse minéralogique d'un cratère situé à 8 Km de leur position.
+            </StoryP>
 
-            <p>
-              Aliquam venenatis blandit massa eu mollis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis vitae lectus sem. Aliquam blandit odio turpis, eget volutpat sem posuere in. Curabitur maximus nisl eget placerat congue. Mauris consectetur at elit nec hendrerit. Phasellus egestas eros urna, at elementum nunc commodo id. Mauris vel nunc massa. Nam interdum nisl vitae sapien iaculis, sit amet feugiat dolor vestibulum. Donec non iaculis ligula. Vivamus sagittis vehicula lectus non scelerisque. Maecenas egestas eros vehicula, scelerisque nunc id, aliquet urna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas condimentum aliquam nisl. Donec tincidunt felis eu leo fringilla, vel tincidunt dolor ornare. Nunc tincidunt varius consectetur.
-            </p>
+            <StoryP>
+              Pour effectuer cette mission, vos astronautes vont avoir besoins de votre supervision pour se rendre 
+              au point d'intérêt, pour se déplacer, s'orienter et installer le matériel.
+            </StoryP>
+
+            <StoryP>
+              Lorsqu'ils montent sur le Rover, vous aller les guider, tournant par tournant, cratère par cratère,
+              à l’affût de la moindre erreur.
+            </StoryP>
+            <StoryP>
+              Une fois arrivés sur place, vous leur dictez le protocol d'installation du matériel étape par étape.
+              L'analyse poura alors commencer.
+            </StoryP>
+            <StoryP>
+              Résultat, vous avez dû passer plusieurs heures à superviser l'équipe. Cependant, vous n'avez pas que cette équipe à encadrer.
+            </StoryP>
+            <MainPb>N'y aurait-il pas moyen d'améliorer l'autonomie et l'efficacité des astronautes ?</MainPb>
           </div>
+
+          <ArrowView onClick={() => endRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })}>
+            <img alt="arrow" src="/down-arrow.svg" width="50" height="50" />
+          </ArrowView>
         </StoryView>
         <SlideShow />
       </Container>

@@ -48,7 +48,7 @@ const Title = styled.h1`
 `;
 
 const SubTitle = styled.h2`
-  font-size: 2em;
+  font-size: 3em;
   z-index: 2;
   color: white;
   text-align: justify;
@@ -69,8 +69,8 @@ function Home(): JSX.Element {
       </LogoView>
       <Container style={{ flexDirection: 'row', width: '100%', height: '50%', marginTop: '5%', backgroundImage: 'url(/star.png)', backgroundAttachment: 'fixed', position: 'relative' }}>
         <LeftView>
-          <Title style={{ marginLeft: '10%', marginTop: '10%' }}>Test</Title>
-          <SubTitle style={{ marginLeft: '10%' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tincidunt fringilla augue, at pulvinar tellus egestas ac. Cras suscipit viverra tortor non interdum. Donec efficitur volutpat lacinia. </SubTitle>
+          <Title style={{ marginLeft: '10%', marginTop: '10%', fontFamily: 'Righteous, sans-serif' }}>Caelus</Title>
+          <SubTitle style={{ marginLeft: '10%' }}>Do not consider your suit solely for survival, let it become a tool. </SubTitle>
         </LeftView>
         <RightView>
           <Astro style={{ right: '10%' }}>

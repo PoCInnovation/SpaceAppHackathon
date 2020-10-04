@@ -1,7 +1,7 @@
 [
   {
     "title": "IR/UV Camera",
-    "paragraph": "A camera that attaches on the helmet. It allows the astronaut to see in low visibility environment."
+    "paragraph": "A camera that attaches to the helmet. It allows the astronaut to see in low visibility environment."
   },
 
   {
@@ -11,12 +11,12 @@
 
   {
     "title": "Robotic Arm",
-    "paragraph": "The robotic arm will allow any module attached to stay stable, for example a Lidar or solar panel."
+    "paragraph": "The robotic arm will allow any module attached to stay stable, for example, a Lidar or solar panel."
   },
   
   {
     "title": "Interface",
-    "paragraph": "The interface allow your astronaut to easily attach modules on the suit."
+    "paragraph": "The interface allows your astronaut to easily attach modules to the suit."
   },
   {
     "title": "Virtual assistant",

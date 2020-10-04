@@ -81,7 +81,7 @@ export function Laser(): JSX.Element {
 export default function LaserModel(): JSX.Element {
   return (
     <ModelBox>
-      <Canvas camera={{ position: [1, 0, 0] }}>
+      <Canvas camera={{ position: [15, -50, 50] }}>
         <ambientLight intensity={0.5} />
         <spotLight intensity={0.8} position={[300, 300, 400]} />
         <OrbitControls
@@ -108,7 +108,7 @@ export default function LaserModel(): JSX.Element {
             </Html>
       )}
         >
-          <mesh position={[-3, -16.5, 0.5]} scale={[10, 10, 10]}>
+          <mesh position={[0, -3, 2.5]} scale={[300, 300, 300]}>
             <Laser />
           </mesh>
         </Suspense>

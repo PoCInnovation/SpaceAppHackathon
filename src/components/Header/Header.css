@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+.header {
+  font-family: 'Secular One', sans-serif;
+  width: 100%;
+  position: fixed;
+  background: black;
+  color: white;
+  z-index: 3;
+}
+
+
+.header-nav {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.logo {
+  margin: 20px 70px;
+  float: left;
+  font-size: 3.5em;
+  font-family: 'Righteous', 'Secular One', sans-serif;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding-right: 70px;
+  list-style: none;
+  margin: 25px 0 25px 0;
+}
+
+.navbar .nav-element {
+  padding:  0 40px 0 40px;
+}
+
+.navbar .nav-element-current {
+  padding:  0 40px 0 40px;
+}
+
+.navbar .nav-element span {
+  font-size: 2.25em;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar .nav-element-current span {
+  font-size: 2.25em;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: underline;
+}
+
+.navbar .nav-element a:hover {
+  color: grey;
+}

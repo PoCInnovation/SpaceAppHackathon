@@ -96,7 +96,7 @@ function Home(): JSX.Element {
       </Container>
       <Container style={{ flexDirection: 'row', height: '50%', color: 'white', backgroundImage: 'url(/moon.png)', backgroundSize: 'cover', backgroundPosition: 'bottom', backgroundRepeat: 'no-repeat  ' }}>
         <LeftView style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-          <iframe title="video" width="700" height="405" src="https://www.youtube.com/embed/REFplGvoUDg" allowFullScreen />
+          <iframe title="video" width="700" height="405" src="https://youtu.be/YWWb7l6svI8" allowFullScreen />
           <Link to="/product" style={{ fontFamily: 'Righteous', textDecoration: 'none', marginTop: '7%', backgroundColor: 'black', borderRadius: 5, paddingTop: 5, paddingBottom: 5, paddingLeft: 15, paddingRight: 15 }}>
             <span style={{ color: 'white', fontWeight: 'bold', fontSize: 30 }}>SEE FULL PRODUCT</span>
           </Link>

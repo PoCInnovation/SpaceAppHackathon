@@ -6,15 +6,12 @@ import './SlideShow.css';
 import MySlide from '../Slide';
 import slidesJson from './slides.json';
 
-const SlideShow = () : JSX.Element => {
-  const height = window.innerHeight;
-
-  return (
-    <div style={{ marginLeft: '10%', marginRight: '10%' }}>
-      <Slide easing="ease" autoplay={false} duration={0}>
-        {
+const SlideShow = (): JSX.Element => (
+  <div style={{ marginLeft: '10%', marginRight: '10%' }}>
+    <Slide easing="ease" autoplay={false} duration={0}>
+      {
           slidesJson.map((item) => (
-            <div className="each-slide" style={{ height }}>
+            <div className="each-slide">
               <MySlide
                 title={item.title}
                 paragraph={item.paragraph}

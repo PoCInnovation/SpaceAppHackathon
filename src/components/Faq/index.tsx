@@ -5,14 +5,14 @@ const Question = styled.p`
   margin: 1em;
   font-size: 1.5em;
   font-weight: bold;
-  color: black;
+  color: #fff;
   text-align: justify;
 `;
 
 const Answer = styled.p`
   margin: 1em;
   font-size: 18px;
-  color: black;
+  color: #fff;
   text-align: justify;
 `;
 
@@ -40,7 +40,7 @@ const TransitionText = styled.h3`
 `;
 
 const Card = styled.div`
-  background-color: white;
+  background-color: #272624;
   margin: 30px;
   border-radius: 5px;
   width: ${(window.innerWidth * 0.6) / 2}px;

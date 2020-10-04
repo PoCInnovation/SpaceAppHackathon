@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import CamModel from '../Model/IRCam';
@@ -23,7 +23,7 @@ const TextContainer = styled.div`
   color: white;
   margin-bottom: 15%;
 `;
-const TitleText = styled.p`
+const TitleText = styled.a`
   font-size: 3em;
 `;
 const ParaText = styled.p`
@@ -44,6 +44,7 @@ type SlideProps = {
 };
 
 const MySlide = ({ title, paragraph }: SlideProps): JSX.Element => {
+  const [canvaVisible, setCanvaVisible] = useState<boolean>(false);
   const GetModel = (): JSX.Element => {
     switch (title) {
       case 'IR/UV Camera':
@@ -67,11 +68,15 @@ const MySlide = ({ title, paragraph }: SlideProps): JSX.Element => {
   return (
     <MyStyleSlide>
       <TextContainer>
-        <TitleText>{title}</TitleText>
+        <TitleText onClick={(): void => setCanvaVisible(!canvaVisible)}>{title}</TitleText>
         <ParaText>{paragraph}</ParaText>
       </TextContainer>
       <ModelContainer>
-        <GetModel />
+        { canvaVisible
+          ? (<GetModel />)
+          : (
+            <img src="/ircam.png" alt="preview" style={{ width: '100%', height: '100%' }} />
+          )}
       </ModelContainer>
     </MyStyleSlide>
   );

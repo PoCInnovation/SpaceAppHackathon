@@ -41,7 +41,7 @@ const ModelBox = styled.div`
 
 export function ArmLidar(): JSX.Element {
   const group = useRef<THREE.Group>();
-  const { nodes, materials } = useLoader<GLTFResult>(GLTFLoader, '/ArmLidar.glb');
+  const { nodes, materials } = useLoader<GLTFResult>(GLTFLoader, '/model/ArmLidar.glb');
 
   return (
     <group ref={group} dispose={null}>

@@ -46,7 +46,7 @@ interface SlideProps {
 }
 
 const MySlide = ({ title, paragraph, preview }: SlideProps): JSX.Element => {
-  const [canvaVisible, setCanvaVisible] = useState<boolean>(false);
+  const [canvaVisible, setCanvaVisible] = useState<boolean>(true);
   const GetModel = (): JSX.Element => {
     switch (title) {
       case 'IR/UV Camera':

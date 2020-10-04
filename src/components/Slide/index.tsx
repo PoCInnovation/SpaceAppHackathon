@@ -11,7 +11,6 @@ const MyStyleSlide = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
   height: 100%;
 `;
 const TextContainer = styled.div`

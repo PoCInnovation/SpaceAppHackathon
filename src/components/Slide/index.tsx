@@ -42,10 +42,9 @@ const ModelContainer = styled.div`
 type SlideProps = {
   title: string;
   paragraph: string;
-  modelPath: string;
 };
 
-const MySlide = ({ title, paragraph, modelPath }: SlideProps): JSX.Element => {
+const MySlide = ({ title, paragraph }: SlideProps): JSX.Element => {
   const GetModel = (): JSX.Element => {
     switch (title) {
       case 'Camera':

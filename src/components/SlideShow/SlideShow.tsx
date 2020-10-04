@@ -4,6 +4,7 @@ import 'react-slideshow-image/dist/styles.css';
 import './SlideShow.css';
 
 import MySlide from '../Slide';
+import slidesJson from './slides.json';
 
 const SlideShow = () : JSX.Element => {
   const height = window.innerHeight;
@@ -11,8 +12,19 @@ const SlideShow = () : JSX.Element => {
   return (
     <div style={{ marginLeft: '10%', marginRight: '10%' }}>
       <Slide easing="ease" autoplay={false} duration={0}>
-        <div className="each-slide" style={{ height, backgroundColor: 'transparent' }}>
-          <MySlide
+        {
+          slidesJson.map((item) => (
+            <div className="each-slide" style={{ height }}>
+              <MySlide
+                title={item.title}
+                paragraph={item.paragraph}
+              />
+            </div>
+          ))
+        }
+          {/* <div className="each-slide" style={{ height, backgroundColor: 'transparent' }}>
+          
+        <MySlide
             title="IR/UV Camera"
             paragraph="A camera that attaches on the helmet. It allows the astronaut to see in low visibility environment."
             modelPath="da,s ton cul"
@@ -45,7 +57,7 @@ const SlideShow = () : JSX.Element => {
             paragraph="Here is how Caelus will be integrated on your astronaut's suit. "
             modelPath="da,s ton cul"
           />
-        </div>
+        </div> */}
         {/* <div className="each-slide" style={{ height, backgroundColor: 'transparent' }}>
           <MySlide
             title="HUD"

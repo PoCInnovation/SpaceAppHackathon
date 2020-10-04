@@ -2,6 +2,9 @@ import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 import { Header } from '../components/Header';
 import { SlideShow } from '../components/SlideShow';
+import Faq from '../components/Faq';
+import questionsFaq from '../components/Faq/questions.json';
+import responsesFaq from '../components/Faq/responses.json';
 
 const Container = styled.div`
   background: #2f3437;
@@ -51,13 +54,12 @@ const ArrowView = styled.a`
   cursor: pointer;
 `;
 
-
 function Product(): JSX.Element {
   const height = window.innerHeight - 111;
   const endRef = useRef<HTMLDivElement>(document.createElement('div'));
 
   return (
-    <Container style={{ flexDirection: 'column', height: window.innerHeight * 2 }}>
+    <Container style={{ flexDirection: 'column', height: window.innerHeight * 3 }}>
       <Header />
       <Container style={{
         flexDirection: 'column',
@@ -76,7 +78,7 @@ function Product(): JSX.Element {
             </StoryP>
 
             <StoryP>
-              Pour effectuer cette mission, vos astronautes vont avoir besoins de votre supervision pour se rendre 
+              Pour effectuer cette mission, vos astronautes vont avoir besoins de votre supervision pour se rendre
               au point d'intérêt, pour se déplacer, s'orienter et installer le matériel.
             </StoryP>
 
@@ -93,11 +95,11 @@ function Product(): JSX.Element {
             </StoryP>
             <MainPb>N'y aurait-il pas moyen d'améliorer l'autonomie et l'efficacité des astronautes ?</MainPb>
           </div>
-
           <ArrowView onClick={() => endRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })}>
             <img alt="arrow" src="/down-arrow.svg" width="50" height="50" />
           </ArrowView>
         </StoryView>
+        <Faq questions={questionsFaq} responses={responsesFaq} />
         <SlideShow />
       </Container>
       <LogoView

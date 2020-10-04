@@ -5,7 +5,7 @@ import 'react-slideshow-image/dist/styles.css';
 import './SlideShow.css';
 
 const SlideShow = () : JSX.Element => {
-  const height = window.innerHeight - 111;
+  const height = window.innerHeight;
 
   return (
     <div>

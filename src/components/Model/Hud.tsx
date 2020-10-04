@@ -1,41 +1,36 @@
 import React, { useRef, Suspense } from 'react';
 import { useFrame, useLoader, Canvas } from 'react-three-fiber';
 import { GLTFLoader, GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
-import { draco, OrbitControls, Html, Loader } from '@react-three/drei';
+import { OrbitControls, Html, Loader } from '@react-three/drei';
 import styled from 'styled-components';
 
 type GLTFResult = GLTF & {
   nodes: {
-    HELMET_GLASS: THREE.Mesh
-    Status_Data: THREE.Mesh
-    AR_Nav_1: THREE.Mesh
-    Left_Up: THREE.Mesh
-    Map: THREE.Mesh
-    Nav: THREE.Mesh
-    Panel_Down: THREE.Mesh
-    Panel_Up: THREE.Mesh
-    Plane001: THREE.Mesh
-    Plane002: THREE.Mesh
-    Right_Down: THREE.Mesh
-    Right_Up: THREE.Mesh
-    Status: THREE.Mesh
-    Suit: THREE.Mesh
+    AR_Nav_1001: THREE.Mesh
+    AR_Nav_1002: THREE.Mesh
+    AR_Nav_1003: THREE.Mesh
+    Plane: THREE.Mesh
+    Plane003: THREE.Mesh
+    Plane004: THREE.Mesh
+    Plane005: THREE.Mesh
+    Plane007: THREE.Mesh
+    Plane008: THREE.Mesh
+    Plane009: THREE.Mesh
+    Plane010: THREE.Mesh
   }
   materials: {
-    ['CLAY.002']: THREE.MeshStandardMaterial
-    ['HudVitals.010']: THREE.MeshStandardMaterial
-    ['HudVitals.003']: THREE.MeshStandardMaterial
-    ['HudVitals.004']: THREE.MeshStandardMaterial
-    ['HudVitals.005']: THREE.MeshStandardMaterial
-    Hud: THREE.MeshStandardMaterial
-    ['HudVitals.002']: THREE.MeshStandardMaterial
-    ['HudVitals.001']: THREE.MeshStandardMaterial
-    HudVitals: THREE.MeshStandardMaterial
-    ['HudVitals.008']: THREE.MeshStandardMaterial
-    ['HudVitals.007']: THREE.MeshStandardMaterial
-    ['HudVitals.017']: THREE.MeshStandardMaterial
+    ['Material.003']: THREE.MeshStandardMaterial
+    ['Material.004']: THREE.MeshStandardMaterial
+    ['Material.005']: THREE.MeshStandardMaterial
+    ['Material.002']: THREE.MeshStandardMaterial
+    ['Material.001']: THREE.MeshStandardMaterial
+    ORANGE: THREE.MeshStandardMaterial
+    GREEN: THREE.MeshStandardMaterial
+    BLUE: THREE.MeshStandardMaterial
+    ['GREEN.001']: THREE.MeshStandardMaterial
   }
-};
+}
+
 
 const ModelBox = styled.div`
   width: 700px;
@@ -50,7 +45,7 @@ const ModelBox = styled.div`
 export function Hud(): JSX.Element {
   const group = useRef<THREE.Group>();
   const modelRef = useRef<any>();
-  const { nodes, materials } = useLoader<GLTFResult>(GLTFLoader, '/hud.glb', draco('/draco-gltf/'));
+  const { nodes, materials } = useLoader<GLTFResult>(GLTFLoader, '/hud.glb');
 
   useFrame(({ gl, scene, camera }) => {
     gl.render(scene, camera);
@@ -60,82 +55,81 @@ export function Hud(): JSX.Element {
   return (
     <group ref={group} dispose={null}>
       <mesh
-        material={materials['CLAY.002']}
-        geometry={nodes.HELMET_GLASS.geometry}
-        position={[0, -13.58, 0.26]}
-        rotation={[-Math.PI, 0, -Math.PI]}
-        scale={[8.65, 8.65, 8.65]}
-      />
-      <mesh
-        material={nodes.Status_Data.material}
-        geometry={nodes.Status_Data.geometry}
-        position={[0.63, 0.7, -0.68]}
-        rotation={[1.55, -0.03, 0.96]}
-        scale={[0.05, 0.05, 0.05]}
-      />
-      <mesh
-        material={materials['HudVitals.010']}
-        geometry={nodes.AR_Nav_1.geometry}
-        position={[-0.18, -0.36, 0.82]}
+        material={materials['Material.003']}
+        geometry={nodes.AR_Nav_1001.geometry}
+        position={[-0.06, -0.26, 1.18]}
         rotation={[0.39, -0.02, -0.04]}
         scale={[1.64, 1.64, 1.64]}
       />
       <mesh
-        material={materials['HudVitals.003']}
-        geometry={nodes.Left_Up.geometry}
-        position={[-1.7, 0.64, 0.84]}
-        rotation={[1.64, -0.04, -0.98]}
-      />
-      <mesh
-        material={materials['HudVitals.004']}
-        geometry={nodes.Map.geometry}
-        position={[-1.7, 0.57, 0.84]}
-        rotation={[1.64, -0.04, -0.98]}
-      />
-      <mesh
-        material={materials['HudVitals.005']}
-        geometry={nodes.Nav.geometry}
-        position={[-0.69, 0.6, -0.56]}
-        rotation={[Math.PI / 2, 0, -0.41]}
-        scale={[0.1, 0.1, 0.1]}
-      />
-      <mesh
-        material={materials['HudVitals.002']}
-        geometry={nodes.Plane001.geometry}
-        position={[0.2, 0.33, -0.62]}
-        rotation={[0.41, -0.27, 0.07]}
-        scale={[0.41, 0.41, 0.41]}
-      />
-      <mesh
-        material={materials['HudVitals.001']}
-        geometry={nodes.Plane002.geometry}
-        position={[0, 0.1, -0.15]}
-        rotation={[0.4, -0.14, 0.01]}
+        material={materials['Material.004']}
+        geometry={nodes.AR_Nav_1002.geometry}
+        position={[-0.01, 0.09, 0.03]}
+        rotation={[0.4, -0.19, 0.03]}
         scale={[0.82, 0.82, 0.82]}
       />
       <mesh
-        material={materials.HudVitals}
-        geometry={nodes.Right_Down.geometry}
-        position={[-0.2, 0.1, -2.07]}
-        rotation={[1.61, 0.05, 0.98]}
+        material={materials['Material.005']}
+        geometry={nodes.AR_Nav_1003.geometry}
+        position={[0.15, 0.27, -0.43]}
+        rotation={[0.41, -0.29, 0.08]}
+        scale={[0.41, 0.41, 0.41]}
       />
       <mesh
-        material={materials['HudVitals.008']}
-        geometry={nodes.Right_Up.geometry}
-        position={[-0.2, 0.72, -2.07]}
-        rotation={[1.61, 0.05, 0.98]}
+        material={materials['Material.002']}
+        geometry={nodes.Plane.geometry}
+        position={[-0.4, 0.61, -0.2]}
+        rotation={[Math.PI / 2, 0, -0.74]}
+        scale={[0.17, 0.16, 0.1]}
       />
       <mesh
-        material={materials['HudVitals.007']}
-        geometry={nodes.Status.geometry}
-        position={[-0.2, 0.61, -2.07]}
-        rotation={[1.61, 0.05, 0.98]}
+        material={materials['Material.001']}
+        geometry={nodes.Plane003.geometry}
+        position={[-0.4, 0.38, -0.2]}
+        rotation={[Math.PI / 2, 0, -0.74]}
+        scale={[0.17, 0.16, 0.1]}
       />
       <mesh
-        material={materials['HudVitals.017']}
-        geometry={nodes.Suit.geometry}
-        position={[-1.7, 0.22, 0.84]}
-        rotation={[1.64, -0.04, -0.98]}
+        material={materials.ORANGE}
+        geometry={nodes.Plane004.geometry}
+        position={[-0.4, 0.75, -0.2]}
+        rotation={[Math.PI / 2, 0, -0.74]}
+        scale={[0.17, 0.16, 0.02]}
+      />
+      <mesh
+        material={materials.GREEN}
+        geometry={nodes.Plane005.geometry}
+        position={[0.58, 0.75, -0.2]}
+        rotation={[Math.PI / 2, 0, -2.32]}
+        scale={[0.17, 0.16, 0.02]}
+      />
+      <mesh
+        material={materials.GREEN}
+        geometry={nodes.Plane007.geometry}
+        position={[0.58, 0.53, -0.2]}
+        rotation={[Math.PI / 2, 0, -2.32]}
+        scale={[0.17, 0.16, 0.17]}
+      />
+      <mesh
+        material={materials.BLUE}
+        geometry={nodes.Plane008.geometry}
+        position={[-0.4, 0.86, -0.2]}
+        rotation={[Math.PI / 2, 0, -0.74]}
+        scale={[0.17, 0.16, 0.02]}
+      />
+      <mesh
+        material={materials.BLUE}
+        geometry={nodes.Plane009.geometry}
+        position={[-0.4, 0.19, -0.2]}
+        rotation={[Math.PI / 2, 0, -0.74]}
+        scale={[0.17, 0.16, 0.02]}
+      />
+      <mesh
+        material={materials['GREEN.001']}
+        geometry={nodes.Plane010.geometry}
+        position={[0.58, 0.31, -0.2]}
+        rotation={[Math.PI / 2, 0, -2.32]}
+        scale={[0.17, 0.16, 0.02]}
       />
     </group>
   );

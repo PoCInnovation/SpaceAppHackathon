@@ -56,13 +56,11 @@ const MySlide = ({ title, paragraph, preview }: SlideProps): JSX.Element => {
         return <CamModel />;
       case 'Robotic Arm':
         return <ArmModel />;
-      case 'Arm Lidar':
-        return <ArmLidarModel />;
       case 'Interface':
         return <ArmLidarModel />;
       case 'Virtual assistant':
         return <ArmLidarModel />;
-      case 'HUD':
+      case 'Helmet HUD':
         return <HudModel />;
     }
   };

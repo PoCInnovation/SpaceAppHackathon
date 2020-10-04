@@ -5,13 +5,13 @@ import 'react-slideshow-image/dist/styles.css';
 import './SlideShow.css';
 
 const SlideShow = () : JSX.Element => {
-  const height = window.innerHeight * 1.9 / 2;
+  const height = window.innerHeight - 111;
 
   return (
     <div>
       <Slide easing="ease">
         <div className="each-slide" style={{ height, backgroundColor: 'yellow' }}>
-          <div style={{ height: '100%', color: 'white'}}>
+          <div style={{ height: '100%' }}>
             <p>TEs 1</p>
           </div>
         </div>

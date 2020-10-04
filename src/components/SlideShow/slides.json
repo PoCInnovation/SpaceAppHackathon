@@ -1,5 +1,10 @@
 [
   {
+    "title": "Helmet HUD",
+    "paragraph": "Information on the visor helmet will be displayed on a HUD.",
+    "preview": "/moonhud.png"
+  },
+  {
     "title": "IR/UV Camera",
     "paragraph": "A camera that attaches to the helmet. It allows the astronaut to see in low visibility environment.",
     "preview": "/ircam.png"
@@ -23,10 +28,5 @@
     "title": "Virtual assistant",
     "paragraph": "Here is how Caelus will be integrated on your astronaut's suit.",
     "preview": "/brain.png"
-  },
-  {
-    "title": "Helmet HUD",
-    "paragraph": "Information on the visor helmet will be displayed on a HUD.",
-    "preview": "/moonhud.png"
   }
 ]

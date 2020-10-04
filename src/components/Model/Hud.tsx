@@ -45,7 +45,7 @@ const ModelBox = styled.div`
 export function Hud(): JSX.Element {
   const group = useRef<THREE.Group>();
   const modelRef = useRef<any>();
-  const { nodes, materials } = useLoader<GLTFResult>(GLTFLoader, '/hud.glb');
+  const { nodes, materials } = useLoader<GLTFResult>(GLTFLoader, '/model/HUD.glb');
 
   useFrame(({ gl, scene, camera }) => {
     gl.render(scene, camera);

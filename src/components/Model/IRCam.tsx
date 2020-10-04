@@ -34,7 +34,7 @@ const ModelBox = styled.div`
 
 export function IRCam(): JSX.Element {
   const group = useRef<THREE.Group>();
-  const { nodes, materials } = useLoader<GLTFResult>(GLTFLoader, '/IRCam.glb');
+  const { nodes, materials } = useLoader<GLTFResult>(GLTFLoader, '/model/IRCam.glb');
 
   return (
     <group ref={group} dispose={null}>

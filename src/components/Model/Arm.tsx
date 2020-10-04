@@ -42,7 +42,7 @@ const ModelBox = styled.div`
 
 export function Arm(): JSX.Element {
   const group = useRef<THREE.Group>();
-  const { nodes, materials } = useLoader<GLTFResult>(GLTFLoader, '/Arm.glb');
+  const { nodes, materials } = useLoader<GLTFResult>(GLTFLoader, '/model/Arm.glb');
 
   return (
     <group ref={group} dispose={null}>

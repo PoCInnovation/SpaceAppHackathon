@@ -35,6 +35,17 @@ const SourceLink = styled.a`
   right: 10px;
 `;
 
+const InfoText = styled.p`
+  display: block;
+  position: sticky;
+  font-weight: bold;
+  z-index: 3;
+  color: white;
+  bottom: 10px;
+  margin-top: 0px;
+  align-self: center;
+`;
+
 function Product(): JSX.Element {
   React.useEffect(() => window.scrollTo(0, 0), []);
 
@@ -45,6 +56,12 @@ function Product(): JSX.Element {
         <Story />
         <Faq questions={questionsFaq} responses={responsesFaq} />
         <SlideShow />
+        <InfoText>
+          Use to the circular icon to switch between 2D and 3D.
+        </InfoText>
+        <InfoText>
+          You can rotate the model by dragging it around - You can move it by pressing the ctrl key - You can zoom in/out by scrolling
+        </InfoText>
       </Container>
       <LogoView
         href="https://github.com/PoCInnovation"

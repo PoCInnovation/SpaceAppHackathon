@@ -1,25 +1,30 @@
 [
   {
     "title": "IR/UV Camera",
-    "paragraph": "A camera that attaches to the helmet. It allows the astronaut to see in low visibility environment."
+    "paragraph": "A camera that attaches to the helmet. It allows the astronaut to see in low visibility environment.",
+    "preview": "/moon.png"
   },
 
   {
     "title": "Laser",
-    "paragraph": "A laser that allows the astronaut to precisely estimate distances."
+    "paragraph": "A laser that allows the astronaut to precisely estimate distances.",
+    "preview": "/moon.png"
   },
 
   {
     "title": "Robotic Arm",
-    "paragraph": "The robotic arm will allow any module attached to stay stable, for example, a Lidar or solar panel."
+    "paragraph": "The robotic arm will allow any module attached to stay stable, for example, a Lidar or solar panel.",
+    "preview": "/moon.png"
   },
   
   {
     "title": "Interface",
-    "paragraph": "The interface allows your astronaut to easily attach modules to the suit."
+    "paragraph": "The interface allows your astronaut to easily attach modules to the suit.",
+    "preview": "/moon.png"
   },
   {
     "title": "Virtual assistant",
-    "paragraph": "Here is how Caelus will be integrated on your astronaut's suit."
+    "paragraph": "Here is how Caelus will be integrated on your astronaut's suit.",
+    "preview": "/moon.png"
   }
 ]

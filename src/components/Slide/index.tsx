@@ -41,9 +41,10 @@ const ModelContainer = styled.div`
 type SlideProps = {
   title: string;
   paragraph: string;
+  preview: String
 };
 
-const MySlide = ({ title, paragraph }: SlideProps): JSX.Element => {
+const MySlide = ({ title, paragraph, preview }: SlideProps): JSX.Element => {
   const [canvaVisible, setCanvaVisible] = useState<boolean>(false);
   const GetModel = (): JSX.Element => {
     switch (title) {

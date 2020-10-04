@@ -11,13 +11,13 @@ const SlideShow = () : JSX.Element => {
     <div>
       <Slide easing="ease">
         <div className="each-slide" style={{ height }}>
-          <div style={{ backgroundColor: 'red', height: '100%' }}>
-            <span>Some text</span>
+          <div style={{ height: '100%', color: 'white'}}>
+            <p>TEs 1</p>
           </div>
         </div>
         <div className="each-slide" style={{ height }}>
-          <div style={{ backgroundColor: 'yellow', height: '100%' }}>
-            <span>Some text 2</span>
+          <div style={{ height: '100%' }}>
+            <p>Test 2</p>
           </div>
         </div>
       </Slide>

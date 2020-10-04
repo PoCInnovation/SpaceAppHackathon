@@ -18,7 +18,7 @@ function Product(): JSX.Element {
   return (
     <Container style={{ flexDirection: 'column', height: window.innerHeight * 2 - 111 }}>
       <Header />
-      <Container style={{ flexDirection: 'column', width: '100%', height: '100%', marginTop: '111px' }}>
+      <Container style={{ flexDirection: 'column', width: '100%', height: '100%', marginTop: '111px',  background: 'black url(/star.png) fixed' }}>
         <SlideShow />
       </Container>
     </Container>

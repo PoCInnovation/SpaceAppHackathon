@@ -11,8 +11,21 @@ const Answer = styled.p`
 `;
 
 const FaqView = styled.div`
-  padding: 20px;
+  padding-top: 30px;
+  text-align: justify;
+  flex-direction: column;
   color: white;
+`;
+
+const QAView = styled.div`
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-items: start;
+  justify-content: space-between;
+`;
+
+const TransitionText = styled.h3`
+  font-size: 1.5em;
 `;
 
 interface FaqProps {
@@ -20,19 +33,22 @@ interface FaqProps {
   responses: string[]
 };
 
-function Faq({questions, responses}: FaqProps): JSX.Element {
+function Faq({ questions, responses }: FaqProps): JSX.Element {
   const height = window.innerHeight - 111;
-  
+
   return (
     <FaqView style={{ height }}>
+      <QAView>
       {
-        questions.map((e, index) => (
-            <div>
-              <Question key={index}>{e}</Question>
-              <Answer key={index}>{responses[index]}</Answer>
-            </div>
-        ))
+          questions.map((e, index) => (
+              <div style={{ marginBottom: '50px' }}>
+                <Question key={index}>{e}</Question>
+                <Answer style={{whiteSpace: "pre-wrap"}} key={index}>{responses[index]}</Answer>
+              </div>
+          ))
       }
+      </QAView>
+      <TransitionText>With our modular solution, you can adapt the suit to your needs, reducing the costs and optimizing your, and the astronaut's time. </TransitionText>
     </FaqView>
   );
 }

@@ -9,7 +9,7 @@ const SlideShow = () : JSX.Element => {
   const height = window.innerHeight;
 
   return (
-    <div>
+    <div style={{ marginLeft: '10%', marginRight: '10%' }}>
       <Slide easing="ease">
         <div className="each-slide" style={{ height, backgroundColor: 'transparent' }}>
           <MySlide

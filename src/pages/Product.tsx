@@ -51,7 +51,6 @@ const ArrowView = styled.a`
   cursor: pointer;
 `;
 
-
 function Product(): JSX.Element {
   const height = window.innerHeight - 111;
   const endRef = useRef<HTMLDivElement>(document.createElement('div'));
@@ -68,7 +67,7 @@ function Product(): JSX.Element {
       >
         <StoryView>
           <Title>HISTOIRE</Title>
-          <div style={{ margin: 'auto', width: '85%' }}>
+          <div style={{ margin: 'auto', width: '50%', textAlign: 'justify' }}>
             <StoryP>
               Vous êtes une agence spatiale et le programme Artémis est en place. Depuis la Terre,
               vous supervisez une mission sur la Lune. Votre groupe d'astronautes se prépare pour
@@ -76,7 +75,7 @@ function Product(): JSX.Element {
             </StoryP>
 
             <StoryP>
-              Pour effectuer cette mission, vos astronautes vont avoir besoins de votre supervision pour se rendre 
+              Pour effectuer cette mission, vos astronautes vont avoir besoins de votre supervision pour se rendre
               au point d'intérêt, pour se déplacer, s'orienter et installer le matériel.
             </StoryP>
 

@@ -11,12 +11,14 @@ const ModelStyle = styled.div`
   align-content: center;
   justify-content: center;
 
-  width: 70%;
-  height: 70%;
+  width: 80%;
+  height: 50%;
 
   border: 1px;
   border-style: solid;
   border-color: white;
+
+  margin-bottom: 15%;
 `;
 
 function Model(): JSX.Element {

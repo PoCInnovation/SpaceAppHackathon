@@ -2,8 +2,7 @@ import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { Header } from '../components/Header';
 
-import ModelRender from '../components/ModelRender'
-
+import ModelRender from '../components/ModelRender';
 
 const Container = styled.div`
   background: black;

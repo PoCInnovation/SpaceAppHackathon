@@ -16,7 +16,7 @@ const Container = styled.div`
 const StoryView = styled.div`
   position: relative;
   text-align: center;
-  height: ${window.innerHeight - (5 / 100)}px;
+  height: ${window.innerHeight * 0.95}px;
   color: white;
 `;
 

@@ -34,7 +34,7 @@ interface FaqProps {
 };
 
 function Faq({ questions, responses }: FaqProps): JSX.Element {
-  const height = window.innerHeight - 111;
+  const height = window.innerHeight * 0.95;
 
   return (
     <FaqView style={{ height }}>

@@ -1,7 +1,7 @@
-import React, { Suspense, useRef } from 'react';
-import { Canvas, useFrame, useLoader } from 'react-three-fiber';
+import React, { useRef, Suspense } from 'react';
+import { useFrame, useLoader, Canvas } from 'react-three-fiber';
 import { GLTFLoader, GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
-import { OrbitControls } from 'drei';
+import { draco, OrbitControls, Html, Loader } from '@react-three/drei';
 import styled from 'styled-components';
 
 type GLTFResult = GLTF & {
@@ -40,14 +40,14 @@ type GLTFResult = GLTF & {
 const ModelBox = styled.div`
   width: 700px;
   height: 405px;
-  background-color: darkslategrey;
+  background-color: #909090;
   border-style: solid;
 `;
 
-function Model(): JSX.Element {
+export function Hud(): JSX.Element {
   const group = useRef<THREE.Group>();
-  const { nodes, materials } = useLoader<GLTFResult>(GLTFLoader, 'hud7.glb');
   const modelRef = useRef<any>();
+  const { nodes, materials } = useLoader<GLTFResult>(GLTFLoader, '/hud.glb', draco('/draco-gltf/'));
 
   useFrame(({ gl, scene, camera }) => {
     gl.render(scene, camera);
@@ -97,17 +97,6 @@ function Model(): JSX.Element {
         scale={[0.1, 0.1, 0.1]}
       />
       <mesh
-        material={materials.Hud}
-        geometry={nodes.Panel_Down.geometry}
-        position={[-0.87, 0, -0.31]}
-      />
-      <mesh
-        material={materials.Hud}
-        geometry={nodes.Panel_Up.geometry}
-        position={[0.93, 1.25, -0.31]}
-        rotation={[0, 0, Math.PI]}
-      />
-      <mesh
         material={materials['HudVitals.002']}
         geometry={nodes.Plane001.geometry}
         position={[0.2, 0.33, -0.62]}
@@ -149,7 +138,7 @@ function Model(): JSX.Element {
   );
 }
 
-export default function ModelRender(): JSX.Element {
+export default function HudModel(): JSX.Element {
   return (
     <ModelBox>
       <Canvas camera={{ position: [50, 0, 0] }}>
@@ -169,9 +158,20 @@ export default function ModelRender(): JSX.Element {
           minDistance={-500}
           maxDistance={1000}
         />
-        <Suspense fallback={null}>
+        <Suspense
+          fallback={(
+            <Html center>
+              <Loader
+                containerStyles={{ backgroundColor: 'transparent' }}
+                innerStyles={{ backgroundColor: 'transparent' }}
+                barStyles={{ backgroundColor: 'black' }}
+                dataStyles={{ backgroundColor: 'transparent' }}
+              />
+            </Html>
+      )}
+        >
           <mesh scale={[10, 10, 10]}>
-            <Model />
+            <Hud />
           </mesh>
         </Suspense>
       </Canvas>

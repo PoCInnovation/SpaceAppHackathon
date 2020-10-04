@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { Header } from '../components/Header';
-
-import ModelRender from '../components/ModelRender';
+import HudModel from '../components/Model/Hud';
+import IRCamModel from '../components/Model/IRCam';
 
 const Container = styled.div`
   background: black;
@@ -87,7 +87,7 @@ function Home(): JSX.Element {
       <Container style={{ flexDirection: 'row', height: '50%', color: 'white', backgroundImage: 'url(/moon.png)', backgroundSize: 'cover', backgroundPosition: 'bottom', backgroundRepeat: 'no-repeat  ' }}>
         <LeftView style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           {/* <iframe title="video" width="700" height="405" src="https://www.youtube.com/embed/pVddPNSzjZI" allowFullScreen /> */}
-          <ModelRender />
+          <IRCamModel />
         </LeftView>
         <RightView>
           <Astro style={{ right: '10%', top: '5%' }} ref={endRef}>

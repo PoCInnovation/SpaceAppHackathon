@@ -14,12 +14,40 @@ const ModelBox = styled.div`
   border-style: solid;
 `;
 
+type GLTFResult = GLTF & {
+  nodes: {
+    HELMET_BASE: THREE.Mesh
+    HELMET_GLASS: THREE.Mesh
+    HELMET_METAL_PARTS: THREE.Mesh
+    BOTTLE_TUBE: THREE.Mesh
+    Cube: THREE.Mesh
+  }
+  materials: {
+    CLAY: THREE.MeshStandardMaterial
+    VISOR: THREE.MeshStandardMaterial
+    ARMATURE: THREE.MeshStandardMaterial
+    ['CLAY.001']: THREE.MeshStandardMaterial
+    ['CLAY_NORMAL_MAP.001']: THREE.MeshStandardMaterial
+  }
+};
+
 export function Arm(): JSX.Element {
   const group = useRef<THREE.Group>();
-  const { nodes, materials } = useLoader(GLTFLoader, '/model/Arm.glb');
+  const { nodes, materials } = useLoader<GLTFResult>(GLTFLoader, '/model/VirtualAssistant.glb');
 
   return (
-    <group ref={group} dispose={null} />
+    <group ref={group} dispose={null}>
+      <mesh material={materials.CLAY} geometry={nodes.HELMET_BASE.geometry} />
+      <mesh material={materials.VISOR} geometry={nodes.HELMET_GLASS.geometry} />
+      <mesh material={materials.ARMATURE} geometry={nodes.HELMET_METAL_PARTS.geometry} />
+      <mesh material={materials['CLAY.001']} geometry={nodes.BOTTLE_TUBE.geometry} />
+      <mesh
+        material={materials['CLAY_NORMAL_MAP.001']}
+        geometry={nodes.Cube.geometry}
+        position={[0, 1.62, -0.16]}
+        scale={[0.05, 0.05, 0.05]}
+      />
+    </group>
   );
 }
 

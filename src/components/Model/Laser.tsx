@@ -14,12 +14,67 @@ const ModelBox = styled.div`
   border-style: solid;
 `;
 
+type GLTFResult = GLTF & {
+  nodes: {
+    Sphere001: THREE.Mesh
+    Sphere002: THREE.Mesh
+    Sphere003: THREE.Mesh
+    Cube006: THREE.Mesh
+    ['Cube.006_0']: THREE.Mesh
+    ['Cube.006_1']: THREE.Mesh
+    Cube004: THREE.Mesh
+  }
+  materials: {
+    ['CLAY_MODULE_CAMIR.013']: THREE.MeshStandardMaterial
+    ['CLAY_MODULE_CAMIR.011']: THREE.MeshStandardMaterial
+    ['CLAY_MODULE_CAMIR.002']: THREE.MeshStandardMaterial
+    ['CLAY_MODULE_CAMIR.001']: THREE.MeshStandardMaterial
+  }
+};
+
 export function Laser(): JSX.Element {
   const group = useRef<THREE.Group>();
-  const { nodes, materials } = useLoader(GLTFLoader, '/model/Arm.glb');
+  const { nodes, materials } = useLoader<GLTFResult>(GLTFLoader, '/model/Laser.glb');
 
   return (
-    <group ref={group} dispose={null} />
+    <group ref={group} dispose={null}>
+      <mesh
+        material={nodes.Sphere001.material}
+        geometry={nodes.Sphere001.geometry}
+        position={[0, 0.03, 0.04]}
+        scale={[0, 0, 0]}
+      />
+      <mesh
+        material={nodes.Sphere002.material}
+        geometry={nodes.Sphere002.geometry}
+        position={[0, 0.03, 0.04]}
+        scale={[0, 0, 0]}
+      />
+      <mesh
+        material={nodes.Sphere003.material}
+        geometry={nodes.Sphere003.geometry}
+        position={[0, 0.02, 0.04]}
+        scale={[0, 0, 0]}
+      />
+      <mesh
+        material={materials['CLAY_MODULE_CAMIR.013']}
+        geometry={nodes.Cube006.geometry}
+        position={[0, 0.01, -0.03]}
+        rotation={[0, 0, Math.PI / 2]}
+        scale={[0.01, 0, 0.01]}
+      />
+      <group rotation={[0, 0, Math.PI / 2]} scale={[0.01, 0.03, 0.05]}>
+        <mesh material={materials['CLAY_MODULE_CAMIR.011']} geometry={nodes['Cube.006_0'].geometry} />
+        <mesh material={materials['CLAY_MODULE_CAMIR.002']} geometry={nodes['Cube.006_1'].geometry} />
+      </group>
+      <mesh
+        material={materials['CLAY_MODULE_CAMIR.001']}
+        geometry={nodes.Cube004.geometry}
+        position={[0, 0.03, 0]}
+        rotation={[0, 0, Math.PI / 2]}
+        scale={[0.01, 0.01, -0.05]}
+      />
+    </group>
   );
 }
 

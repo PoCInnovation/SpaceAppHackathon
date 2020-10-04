@@ -5,8 +5,8 @@ import styled from 'styled-components';
 import CamModel from '../Model/IRCam';
 import HudModel from '../Model/Hud';
 import ArmLidarModel from '../Model/ArmLidar';
-// import LaserModel from '../Model/Laser';
-// import VirtualAssistantModel from '../Model/VirtualAssistant';
+import LaserModel from '../Model/Laser';
+import VirtualAssistantModel from '../Model/VirtualAssistant';
 
 const MyStyleSlide = styled.div`
   margin-top: 5%;
@@ -55,13 +55,11 @@ const MySlide = ({ title, paragraph, preview }: SlideProps): JSX.Element => {
       default:
         return <CamModel />;
       case 'Laser':
-        return <CamModel />;
+        return <LaserModel />;
       case 'Robotic Arm':
         return <ArmLidarModel />;
-      case 'Interface':
-        return <CamModel />;
       case 'Virtual assistant':
-        return <CamModel />;
+        return <VirtualAssistantModel />;
       case 'Helmet HUD':
         return <HudModel />;
     }

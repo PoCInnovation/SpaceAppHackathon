@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { Header } from '../components/Header';
 import Story from '../components/Story/Story';
@@ -23,16 +23,8 @@ const LogoView = styled.a`
   z-index: 3;
 `;
 
-const ArrowView = styled.a`
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  z-index: 1;
-  cursor: pointer;
-`;
-
-function Product(): JSX.Element {
-  const endRef = useRef<HTMLDivElement>(document.createElement('div'));
+const Product = (): JSX.Element => {
+  React.useEffect(() => window.scrollTo(0, 0), []);
 
   return (
     <Container style={{ flexDirection: 'column' }}>
@@ -51,6 +43,6 @@ function Product(): JSX.Element {
       </LogoView>
     </Container>
   );
-}
+};
 
 export default Product;

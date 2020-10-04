@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Header } from '../components/Header';
+<<<<<<< HEAD
 
 import Slide from '../components/Slide';
+=======
+import { SlideShow } from '../components/SlideShow';
+>>>>>>> 9b020db7092db2285453dad80804e223c2568be8
 
 const Container = styled.div`
   background: #2f3437;
@@ -15,13 +19,12 @@ function Product(): JSX.Element {
   const height = window.innerHeight;
 
   return (
-    <Container style={{ flexDirection: 'column', height: window.innerHeight }}>
+    <Container style={{ flexDirection: 'column', height: window.innerHeight * 2 - 111 }}>
       <Header />
-      <Slide
-        title="Titre"
-        paragraph="A paragraph is a series of related sentences developing a central idea, called the topic. Try to think about paragraphs in terms of thematic unity: a paragraph is a sentence or a group of sentences that supports one central, unified idea. Paragraphs add one idea at a time to your broader argument."
-        modelPath="danstoncul.com"
-      />
+      <Container style={{ flexDirection: 'column', width: '100%', height: '100%', marginTop: '111px',  background: 'black url(/star.png) fixed' }}>
+        
+        <SlideShow />
+      </Container>
     </Container>
   );
 }

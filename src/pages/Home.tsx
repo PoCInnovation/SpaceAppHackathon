@@ -55,7 +55,6 @@ const SubTitle = styled.h2`
   font-size: 3em;
   z-index: 2;
   color: white;
-  /* text-align: justify; */
 `;
 
 function Home(): JSX.Element {

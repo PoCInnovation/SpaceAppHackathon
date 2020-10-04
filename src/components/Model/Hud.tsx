@@ -40,7 +40,10 @@ type GLTFResult = GLTF & {
 const ModelBox = styled.div`
   width: 700px;
   height: 405px;
-  background-color: #909090;
+  background-image: url('/blueprint.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   border-style: solid;
 `;
 

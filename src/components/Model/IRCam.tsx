@@ -32,15 +32,9 @@ const ModelBox = styled.div`
   border-style: solid;
 `;
 
-const ImgStyle = styled.img`
-  margin-left: 95%;
-`;
-
 export function IRCam(): JSX.Element {
   const group = useRef<THREE.Group>();
   const { nodes, materials } = useLoader<GLTFResult>(GLTFLoader, '/IRCam.glb');
-
-  if (group) console.log(group);
 
   return (
     <group ref={group} dispose={null}>
@@ -72,7 +66,6 @@ export function IRCam(): JSX.Element {
 export default function IRCamModel(): JSX.Element {
   return (
     <ModelBox>
-      <ImgStyle src="https://freeiconshop.com/wp-content/uploads/edd/download-flat.png" alt="download" width="50" height="50" />
       <Canvas camera={{ position: [1, 0, 0] }}>
         <ambientLight intensity={0.5} />
         <spotLight intensity={0.8} position={[300, 300, 400]} />

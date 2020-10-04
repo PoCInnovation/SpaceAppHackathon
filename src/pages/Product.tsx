@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
+import { Link, useLocation } from 'react-router-dom';
 import { Header } from '../components/Header';
 import Story from '../components/Story/Story';
 import { SlideShow } from '../components/SlideShow';
@@ -31,6 +32,17 @@ const ArrowView = styled.a`
   cursor: pointer;
 `;
 
+const SourceLink = styled.a`
+  display: block;
+  font-weight: bold;
+  position: fixed;
+  z-index: 3;
+  color: white;
+  cursor: pointer;
+  bottom: 10px;
+  right: 10px;
+`;
+
 function Product(): JSX.Element {
   const endRef = useRef<HTMLDivElement>(document.createElement('div'));
 
@@ -49,6 +61,11 @@ function Product(): JSX.Element {
       >
         <img alt="poc" src="/poc_logo.png" style={{ width: '20%', height: '20%' }} />
       </LogoView>
+      <Link to="/sources" style={{ textDecoration: 'none' }}>
+        <SourceLink>
+          Sources
+        </SourceLink>
+      </Link>
     </Container>
   );
 }

@@ -138,7 +138,7 @@ export function Hud(): JSX.Element {
 export default function HudModel(): JSX.Element {
   return (
     <ModelBox>
-      <Canvas camera={{ position: [1, 0, 0] }}>
+      <Canvas camera={{ position: [10, 0, 0] }}>
         <ambientLight intensity={0.5} />
         <spotLight intensity={0.8} position={[300, 300, 400]} />
         <OrbitControls
@@ -165,7 +165,7 @@ export default function HudModel(): JSX.Element {
             </Html>
       )}
         >
-          <mesh position={[-3, -16.5, 0.5]} scale={[10, 10, 10]}>
+          <mesh position={[0, -3, 2.5]} scale={[10, 10, 10]} rotation={[0, -30, 0]}>
             <Hud />
           </mesh>
         </Suspense>

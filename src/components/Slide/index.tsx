@@ -1,7 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import ModelRender from '../ModelRender';
+import CamModel from '../Model/IRCam';
+import HudModel from '../Model/Hud';
+import ArmModel from '../Model/Arm';
+import ArmLidarModel from '../Model/ArmLidar';
 
 const MyStyleSlide = styled.div`
   margin-top: 5%;
@@ -43,8 +46,20 @@ type SlideProps = {
   modelPath: string;
 };
 
-function MySlide(props: SlideProps): JSX.Element {
-  const { title, paragraph, modelPath } = props;
+const MySlide = ({ title, paragraph, modelPath }: SlideProps): JSX.Element => {
+  const GetModel = (): JSX.Element => {
+    switch (title) {
+      case 'Camera':
+      default:
+        return <CamModel />;
+      case 'HUD':
+        return <HudModel />;
+      case 'Arm':
+        return <ArmModel />;
+      case 'Arm Lidar':
+        return <ArmLidarModel />;
+    }
+  };
 
   return (
     <MyStyleSlide>
@@ -53,10 +68,10 @@ function MySlide(props: SlideProps): JSX.Element {
         <ParaText>{paragraph}</ParaText>
       </TextContainer>
       <ModelContainer>
-        <ModelRender />
+        <GetModel />
       </ModelContainer>
     </MyStyleSlide>
   );
-}
+};
 
 export default MySlide;

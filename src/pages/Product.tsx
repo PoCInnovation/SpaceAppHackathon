@@ -35,9 +35,9 @@ function Product(): JSX.Element {
   const endRef = useRef<HTMLDivElement>(document.createElement('div'));
 
   return (
-    <Container style={{ flexDirection: 'column', height: window.innerHeight * 3 }}>
+    <Container style={{ flexDirection: 'column' }}>
       <Header />
-      <Container style={{ flexDirection: 'column', width: '100%', height: '100%', marginTop: '5%' }}>
+      <Container style={{ flexDirection: 'column', marginTop: '5%' }}>
         <Story />
         <Faq questions={questionsFaq} responses={responsesFaq} />
         <SlideShow />

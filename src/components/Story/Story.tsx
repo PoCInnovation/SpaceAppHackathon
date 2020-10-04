@@ -3,9 +3,11 @@ import styled from 'styled-components';
 import storyJson from './story.json';
 
 const StoryView = styled.div`
-  position: relative;
+  display: flex;
   text-align: center;
+  align-items: center;
   color: white;
+  flex-direction: column;
 `;
 
 const StoryP = styled.p`
@@ -29,11 +31,9 @@ const Story = ():JSX.Element => (
   <StoryView style={{ height: '100%' }}>
     <Title>Story</Title>
     <div style={{ margin: 'auto', width: '60%', textAlign: 'justify' }}>
-      {
-        storyJson.map((item) => <StoryP>{item}</StoryP>)
-      }
+      {storyJson.map((item) => <StoryP>{item}</StoryP>)}
     </div>
-    <div style={{ width: '80%', margin: 'auto' }}>
+    <div style={{ width: '80%' }}>
       <MainPb>
         How can we increase the self-sufficiency
         and efficiency of your astronauts ?

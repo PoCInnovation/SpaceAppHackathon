@@ -16,7 +16,6 @@ const MyStyleSlide = styled.div`
 const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
-
   text-align: justify;
 
   margin: 5%;
@@ -47,15 +46,21 @@ type SlideProps = {
 const MySlide = ({ title, paragraph }: SlideProps): JSX.Element => {
   const GetModel = (): JSX.Element => {
     switch (title) {
-      case 'Camera':
+      case 'IR/UV Camera':
       default:
         return <CamModel />;
-      case 'HUD':
-        return <HudModel />;
-      case 'Arm':
+      case 'Laser':
+        return <CamModel />;
+      case 'Robotic Arm':
         return <ArmModel />;
       case 'Arm Lidar':
         return <ArmLidarModel />;
+      case 'Interface':
+        return <ArmLidarModel />;
+      case 'Virtual assistant':
+        return <ArmLidarModel />;
+      case 'HUD':
+        return <HudModel />;
     }
   };
 

@@ -2,6 +2,9 @@ import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { Header } from '../components/Header';
 
+import ModelRender from '../components/ModelRender'
+
+
 const Container = styled.div`
   background: black;
   display: flex;
@@ -83,7 +86,8 @@ function Home(): JSX.Element {
       </Container>
       <Container style={{ flexDirection: 'row', height: '50%', color: 'white', backgroundImage: 'url(/moon.png)', backgroundSize: 'cover', backgroundPosition: 'bottom', backgroundRepeat: 'no-repeat  ' }}>
         <LeftView style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <iframe title="video" width="700" height="405" src="https://www.youtube.com/embed/pVddPNSzjZI" allowFullScreen />
+          {/* <iframe title="video" width="700" height="405" src="https://www.youtube.com/embed/pVddPNSzjZI" allowFullScreen /> */}
+          <ModelRender />
         </LeftView>
         <RightView>
           <Astro style={{ right: '10%', top: '5%' }} ref={endRef}>

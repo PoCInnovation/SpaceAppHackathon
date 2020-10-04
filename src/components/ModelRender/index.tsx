@@ -47,7 +47,7 @@ export default function ModelRender(): JSX.Element {
           <mesh
             scale={[10, 10, 10]}
             onPointerOver={() => console.log('coucouo')}
-            onClick={(e) => console.log(e)}
+            onClick={(e) => console.log('haha')}
           >
             <Model />
           </mesh>

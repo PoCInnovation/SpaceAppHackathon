@@ -30,6 +30,17 @@ const LogoView = styled.a`
   z-index: 3;
 `;
 
+const SourcesLink = styled.a`
+  display: block;
+  position: fixed;
+  z-index: 3;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  bottom: 10px;
+  right: 10px;
+`;
+
 const ArrowView = styled.a`
   position: absolute;
   bottom: 40px;
@@ -96,6 +107,11 @@ function Home(): JSX.Element {
           </Astro>
         </RightView>
       </Container>
+      <Link to="/sources" style={{ textDecoration: 'none' }}>
+        <SourcesLink>
+          Sources
+        </SourcesLink>
+      </Link>
     </Container>
   );
 }

@@ -32,6 +32,8 @@ const ModelBox = styled.div`
   border-style: solid;
 `;
 
+//test
+
 export function IRCam(): JSX.Element {
   const group = useRef<THREE.Group>();
   const { nodes, materials } = useLoader<GLTFResult>(GLTFLoader, '/IRCam.glb');

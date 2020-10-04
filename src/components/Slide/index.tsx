@@ -11,13 +11,11 @@ const MyStyleSlide = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
   height: 100%;
 `;
 const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
-
   text-align: justify;
 
   margin: 5%;
@@ -43,21 +41,26 @@ const ModelContainer = styled.div`
 type SlideProps = {
   title: string;
   paragraph: string;
-  modelPath: string;
 };
 
-const MySlide = ({ title, paragraph, modelPath }: SlideProps): JSX.Element => {
+const MySlide = ({ title, paragraph }: SlideProps): JSX.Element => {
   const GetModel = (): JSX.Element => {
     switch (title) {
-      case 'Camera':
+      case 'IR/UV Camera':
       default:
         return <CamModel />;
-      case 'HUD':
-        return <HudModel />;
-      case 'Arm':
+      case 'Laser':
+        return <CamModel />;
+      case 'Robotic Arm':
         return <ArmModel />;
       case 'Arm Lidar':
         return <ArmLidarModel />;
+      case 'Interface':
+        return <ArmLidarModel />;
+      case 'Virtual assistant':
+        return <ArmLidarModel />;
+      case 'HUD':
+        return <HudModel />;
     }
   };
 

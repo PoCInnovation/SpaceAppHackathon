@@ -39,11 +39,11 @@ const ModelContainer = styled.div`
   justify-content: center;
 `;
 
-type SlideProps = {
+interface SlideProps {
   title: string;
   paragraph: string;
-  preview: String
-};
+  preview: string;
+}
 
 const MySlide = ({ title, paragraph, preview }: SlideProps): JSX.Element => {
   const [canvaVisible, setCanvaVisible] = useState<boolean>(false);
@@ -77,7 +77,7 @@ const MySlide = ({ title, paragraph, preview }: SlideProps): JSX.Element => {
         { canvaVisible
           ? (<GetModel />)
           : (
-            <img src="/ircam.png" alt="preview" style={{ width: '100%', height: '100%' }} />
+            <img src={preview} alt="preview" style={{ width: '100%', height: '100%' }} />
           )}
       </ModelContainer>
       <img

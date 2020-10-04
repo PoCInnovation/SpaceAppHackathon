@@ -1,5 +1,6 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { Header } from '../components/Header';
 import Story from '../components/Story/Story';
 import { SlideShow } from '../components/SlideShow';
@@ -23,16 +24,19 @@ const LogoView = styled.a`
   z-index: 3;
 `;
 
-const ArrowView = styled.a`
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  z-index: 1;
+const SourceLink = styled.a`
+  display: block;
+  font-weight: bold;
+  position: fixed;
+  z-index: 3;
+  color: white;
   cursor: pointer;
+  bottom: 10px;
+  right: 10px;
 `;
 
 function Product(): JSX.Element {
-  const endRef = useRef<HTMLDivElement>(document.createElement('div'));
+  React.useEffect(() => window.scrollTo(0, 0), []);
 
   return (
     <Container style={{ flexDirection: 'column' }}>
@@ -49,6 +53,11 @@ function Product(): JSX.Element {
       >
         <img alt="poc" src="/poc_logo.png" style={{ width: '20%', height: '20%' }} />
       </LogoView>
+      <Link to="/sources" style={{ textDecoration: 'none' }}>
+        <SourceLink>
+          Sources
+        </SourceLink>
+      </Link>
     </Container>
   );
 }

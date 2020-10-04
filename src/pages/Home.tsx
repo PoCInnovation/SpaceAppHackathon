@@ -30,6 +30,17 @@ const LogoView = styled.a`
   z-index: 3;
 `;
 
+const SourcesLink = styled.a`
+  display: block;
+  position: fixed;
+  z-index: 3;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  bottom: 10px;
+  right: 10px;
+`;
+
 const ArrowView = styled.a`
   position: absolute;
   bottom: 40px;
@@ -57,6 +68,7 @@ const SubTitle = styled.h2`
 
 function Home(): JSX.Element {
   const endRef = useRef<HTMLDivElement>(document.createElement('div'));
+  React.useEffect(() => window.scrollTo(0, 0), []);
 
   return (
     <Container style={{ flexDirection: 'column', height: window.innerHeight * 1.9 }}>
@@ -85,7 +97,6 @@ function Home(): JSX.Element {
       <Container style={{ flexDirection: 'row', height: '50%', color: 'white', backgroundImage: 'url(/moon.png)', backgroundSize: 'cover', backgroundPosition: 'bottom', backgroundRepeat: 'no-repeat  ' }}>
         <LeftView style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
           <iframe title="video" width="700" height="405" src="https://www.youtube.com/embed/REFplGvoUDg" allowFullScreen />
-          {/* <IRCamModel /> */}
           <Link to="/product" style={{ fontFamily: 'Righteous', textDecoration: 'none', marginTop: '7%', backgroundColor: 'black', borderRadius: 5, paddingTop: 5, paddingBottom: 5, paddingLeft: 15, paddingRight: 15 }}>
             <span style={{ color: 'white', fontWeight: 'bold', fontSize: 30 }}>SEE FULL PRODUCT</span>
           </Link>
@@ -96,6 +107,11 @@ function Home(): JSX.Element {
           </Astro>
         </RightView>
       </Container>
+      <Link to="/sources" style={{ textDecoration: 'none' }}>
+        <SourcesLink>
+          Sources
+        </SourcesLink>
+      </Link>
     </Container>
   );
 }

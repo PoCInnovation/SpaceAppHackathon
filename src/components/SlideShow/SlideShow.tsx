@@ -18,28 +18,28 @@ const SlideShow = () : JSX.Element => {
             modelPath="da,s ton cul"
           />
         </div>
-        <div className="each-slide" style={{ height, backgroundColor: 'transparent' }}>
+        <div className="each-slide" style={{ height }}>
           <MySlide
             title="Laser"
             paragraph="A laser that allows the astronaut to precisely estimate distances."
             modelPath="da,s ton cul"
           />
         </div>
-        <div className="each-slide" style={{ height, backgroundColor: 'transparent' }}>
+        <div className="each-slide" style={{ height }}>
           <MySlide
             title="Robotic Arm"
             paragraph="The robotic arm will allow any module attached to stay stable, for example a Lidar or solar panel."
             modelPath="da,s ton cul"
           />
         </div>
-        <div className="each-slide" style={{ height, backgroundColor: 'transparent' }}>
+        <div className="each-slide" style={{ height }}>
           <MySlide
             title="Interface"
             paragraph="The interface allow your astronaut to easily attach modules on the suit."
             modelPath="da,s ton cul"
           />
         </div>
-        <div className="each-slide" style={{ height, backgroundColor: 'transparent' }}>
+        <div className="each-slide" style={{ height }}>
           <MySlide
             title="Virtual assistant"
             paragraph="Here is how Caelus will be integrated on your astronaut's suit. "

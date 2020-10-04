@@ -16,7 +16,6 @@ const Container = styled.div`
 const StoryView = styled.div`
   position: relative;
   text-align: center;
-  height: ${window.innerHeight * 0.95}px;
   color: white;
 `;
 
@@ -44,7 +43,6 @@ const Title = styled.h1`
 const MainPb = styled.h3`
   margin-top: 2.5em;
   font-size: 2.5em;
-  color: white;
 `;
 
 const ArrowView = styled.a`
@@ -66,12 +64,12 @@ function Product(): JSX.Element {
         flexDirection: 'column',
         width: '100%',
         height: '100%',
-        marginTop: '5%',
-        background: 'black url(/star.png) fixed' }}
+        marginTop: '5%'
+      }}
       >
-        <StoryView>
+        <StoryView style={{ height: '100%' }}>
           <Title>HISTOIRE</Title>
-          <div style={{ margin: 'auto', width: '50%', textAlign: 'justify' }}>
+          <div style={{ margin: 'auto', width: '70%', textAlign: 'justify' }}>
             <StoryP>
               Vous êtes une agence spatiale et le programme Artémis est en place. Depuis la Terre,
               vous supervisez une mission sur la Lune. Votre groupe d'astronautes se prépare pour
@@ -79,35 +77,27 @@ function Product(): JSX.Element {
             </StoryP>
 
             <StoryP>
-              Pour effectuer cette mission, vos astronautes vont
-              avoir besoins de votre supervision pour se rendre
+              Pour effectuer cette mission, vos astronautes vont avoir besoins de votre supervision pour se rendre
               au point d'intérêt, pour se déplacer, s'orienter et installer le matériel.
             </StoryP>
 
             <StoryP>
-              Lorsqu'ils montent sur le Rover, vous aller les guider,
-              tournant par tournant, cratère par cratère,
+              Lorsqu'ils montent sur le Rover, vous aller les guider, tournant par tournant, cratère par cratère,
               à l’affût de la moindre erreur.
             </StoryP>
             <StoryP>
-              Une fois arrivés sur place, vous leur dictez le protocol
-              d'installation du matériel étape par étape.
+              Une fois arrivés sur place, vous leur dictez le protocol d'installation du matériel étape par étape.
               L'analyse poura alors commencer.
             </StoryP>
             <StoryP>
-              Résultat, vous avez dû passer plusieurs heures à superviser l'équipe.
-              Cependant, vous n'avez pas que cette équipe à encadrer.
+              Résultat, vous avez dû passer plusieurs heures à superviser l'équipe. Cependant, vous n'avez pas que cette équipe à encadrer.
             </StoryP>
+            <MainPb>N'y aurait-il pas moyen d'améliorer l'autonomie et l'efficacité des astronautes ?</MainPb>
           </div>
+          <ArrowView onClick={() => endRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })}>
+            <img alt="arrow" src="/down-arrow.svg" width="50" height="50" />
+          </ArrowView>
         </StoryView>
-        <ArrowView onClick={() => endRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })}>
-          <img alt="arrow" src="/down-arrow.svg" width="50" height="50" />
-        </ArrowView>
-        <div style={{ alignItems: 'center', marginLeft: '10%', marginRight: '10%' }}>
-          <MainPb>
-            N'y aurait-il pas moyen d'améliorer l'autonomie et l'efficacité des astronautes ?
-          </MainPb>
-        </div>
         <Faq questions={questionsFaq} responses={responsesFaq} />
         <SlideShow />
       </Container>

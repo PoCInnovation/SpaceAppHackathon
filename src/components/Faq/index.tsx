@@ -41,7 +41,7 @@ function Faq({ questions, responses }: FaqProps): JSX.Element {
       <QAView>
       {
           questions.map((e, index) => (
-              <div style={{ marginBottom: '50px' }}>
+              <div>
                 <Question key={index}>{e}</Question>
                 <Answer style={{whiteSpace: "pre-wrap"}} key={index}>{responses[index]}</Answer>
               </div>

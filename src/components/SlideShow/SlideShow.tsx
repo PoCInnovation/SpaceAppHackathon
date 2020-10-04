@@ -15,6 +15,7 @@ const SlideShow = (): JSX.Element => (
               <MySlide
                 title={item.title}
                 paragraph={item.paragraph}
+                preview={item.preview}
               />
             </div>
           ))

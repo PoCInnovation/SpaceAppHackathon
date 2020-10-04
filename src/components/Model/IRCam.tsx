@@ -36,8 +36,6 @@ export function IRCam(): JSX.Element {
   const group = useRef<THREE.Group>();
   const { nodes, materials } = useLoader<GLTFResult>(GLTFLoader, '/IRCam.glb');
 
-  if (group) console.log(group);
-
   return (
     <group ref={group} dispose={null}>
       <group position={[0, 0, -0.03]}>

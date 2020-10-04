@@ -12,6 +12,7 @@ const MyStyleSlide = styled.div`
   flex-direction: row;
   justify-content: space-between;
   height: 100%;
+  position: relative;
 `;
 const TextContainer = styled.div`
   display: flex;
@@ -38,13 +39,14 @@ const ModelContainer = styled.div`
   justify-content: center;
 `;
 
-type SlideProps = {
+interface SlideProps {
   title: string;
   paragraph: string;
-};
+  preview: string;
+}
 
-const MySlide = ({ title, paragraph }: SlideProps): JSX.Element => {
-  const [canvaVisible, setCanvaVisible] = useState<boolean>(false);
+const MySlide = ({ title, paragraph, preview }: SlideProps): JSX.Element => {
+  const [canvaVisible, setCanvaVisible] = useState<boolean>(true);
   const GetModel = (): JSX.Element => {
     switch (title) {
       case 'IR/UV Camera':
@@ -68,16 +70,24 @@ const MySlide = ({ title, paragraph }: SlideProps): JSX.Element => {
   return (
     <MyStyleSlide>
       <TextContainer>
-        <TitleText onClick={(): void => setCanvaVisible(!canvaVisible)}>{title}</TitleText>
+        <TitleText>{title}</TitleText>
         <ParaText>{paragraph}</ParaText>
       </TextContainer>
       <ModelContainer>
         { canvaVisible
           ? (<GetModel />)
           : (
-            <img src="/ircam.png" alt="preview" style={{ width: '100%', height: '100%' }} />
+            <img src={preview} alt="preview" style={{ width: '100%', height: '100%' }} />
           )}
       </ModelContainer>
+      <img
+        style={{ display: 'flex', position: 'absolute', right: 1, top: 1, marginTop: '5%', marginRight: '5%' }}
+        src="/swap.svg"
+        alt="Swap"
+        width="50"
+        height="50"
+        onClick={(): void => setCanvaVisible(!canvaVisible)}
+      />
     </MyStyleSlide>
   );
 };

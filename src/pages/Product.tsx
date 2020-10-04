@@ -1,6 +1,6 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Header } from '../components/Header';
 import Story from '../components/Story/Story';
 import { SlideShow } from '../components/SlideShow';
@@ -24,14 +24,6 @@ const LogoView = styled.a`
   z-index: 3;
 `;
 
-const ArrowView = styled.a`
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  z-index: 1;
-  cursor: pointer;
-`;
-
 const SourceLink = styled.a`
   display: block;
   font-weight: bold;
@@ -44,7 +36,7 @@ const SourceLink = styled.a`
 `;
 
 function Product(): JSX.Element {
-  const endRef = useRef<HTMLDivElement>(document.createElement('div'));
+  React.useEffect(() => window.scrollTo(0, 0), []);
 
   return (
     <Container style={{ flexDirection: 'column' }}>

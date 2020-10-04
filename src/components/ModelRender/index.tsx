@@ -42,7 +42,7 @@ function Model(): JSX.Element {
 export default function ModelRender(): JSX.Element {
   return (
     <ModelStyle>
-      <Canvas camera={{ position: [10, 0, 0] }}>
+      <Canvas camera={{ position: [0, 0, 0] }}>
         <ambientLight intensity={0.5} />
         <spotLight intensity={0.8} position={[300, 300, 400]} />
         <OrbitControls

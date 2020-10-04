@@ -66,7 +66,7 @@ export function IRCam(): JSX.Element {
 export default function IRCamModel(): JSX.Element {
   return (
     <ModelBox>
-      <Canvas camera={{ position: [50, 0, 0] }}>
+      <Canvas camera={{ position: [1, 0, 0] }}>
         <ambientLight intensity={0.5} />
         <spotLight intensity={0.8} position={[300, 300, 400]} />
         <OrbitControls
@@ -78,8 +78,6 @@ export default function IRCamModel(): JSX.Element {
           zoomSpeed={0.6}
           enablePan
           panSpeed={0.4}
-          minPolarAngle={Math.PI / 4}
-          maxPolarAngle={Math.PI / 2}
           minDistance={-500}
           maxDistance={1000}
         />
@@ -95,7 +93,7 @@ export default function IRCamModel(): JSX.Element {
             </Html>
       )}
         >
-          <mesh scale={[10, 10, 10]}>
+          <mesh position={[-3, -16.5, 0.5]} scale={[10, 10, 10]} rotation={[0, 0, 0]}>
             <IRCam />
           </mesh>
         </Suspense>

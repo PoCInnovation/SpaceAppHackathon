@@ -1,9 +1,9 @@
 [
-  "What's the goal of your project ?",
-  "How does your project take shape ?",
-  "What will the informations be used for:",
-  "Is it user-friendly ?",
-  "How will your modules withstand dust ?",
-  "Can the battery life become an issue ?",
-  "What happens if a module breaks ?"
+  "What's the goal of your project?",
+  "How does your project take shape?",
+  "What will the data be used for?",
+  "Is it user-friendly?",
+  "How will your modules withstand the dust?",
+  "Can battery life become an issue?",
+  "What happens if a module breaks?"
 ]

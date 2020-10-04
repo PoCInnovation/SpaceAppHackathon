@@ -10,7 +10,7 @@ const SlideShow = () : JSX.Element => {
 
   return (
     <div style={{ marginLeft: '10%', marginRight: '10%' }}>
-      <Slide easing="ease">
+      <Slide easing="ease" autoplay={false} duration={0}>
         {/* <div className="each-slide" style={{ height, backgroundColor: 'transparent' }}>
           <MySlide
             title="HUD"

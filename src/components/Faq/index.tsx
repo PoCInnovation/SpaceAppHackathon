@@ -38,7 +38,7 @@ function Faq({ questions, responses }: FaqProps): JSX.Element {
 
   return (
     <FaqView style={{ height }}>
-      <QAView>
+      {/* <QAView>
       {
           questions.map((e, index) => (
               <div>
@@ -47,7 +47,7 @@ function Faq({ questions, responses }: FaqProps): JSX.Element {
               </div>
           ))
       }
-      </QAView>
+      </QAView> */}
       <TransitionText>With our modular solution, you can adapt the suit to your needs, reducing the costs and optimizing your, and the astronaut's time. </TransitionText>
     </FaqView>
   );

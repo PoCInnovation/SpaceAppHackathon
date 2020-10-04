@@ -2,8 +2,6 @@ import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Header } from '../components/Header';
-import HudModel from '../components/Model/Hud';
-import IRCamModel from '../components/Model/IRCam';
 
 const Container = styled.div`
   background: black;

@@ -7,7 +7,9 @@ const Header = () : JSX.Element => {
 
   return (
     <div className="header">
-      <img className="logo" alt="Caelus" src="/caelus_logo.png" style={{ width: '3%', height: '3%' }} />
+      <Link to="/" style={{ textDecoration: 'none' }}>
+        <img className="logo" alt="Caelus" src="/caelus_logo.png" style={{ width: '3%', height: '3%' }} />
+      </Link>
       <div className="header-nav">
         <ul className="navbar">
           <Link to="/" style={{ textDecoration: 'none' }}>

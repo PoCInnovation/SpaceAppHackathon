@@ -2,9 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StoryView = styled.div`
-  position: relative;
+  display: flex;
   text-align: center;
+  align-items: center;
   color: white;
+  flex-direction: column;
 `;
 
 const StoryP = styled.p`
@@ -27,7 +29,7 @@ const MainPb = styled.h3`
 const Story = ():JSX.Element => (
   <StoryView style={{ height: '100%' }}>
     <Title>Story</Title>
-    <div style={{ margin: 'auto', width: '60%', textAlign: 'justify' }}>
+    <div style={{ margin: '10', width: '60%', textAlign: 'justify' }}>
       <StoryP>
         You are a space Agency and the Artemis program is in place. From Earth, you oversee a mission on the Moon.
       </StoryP>
@@ -49,9 +51,9 @@ const Story = ():JSX.Element => (
         As a result, you spent multiples hours overseeing the team. However, it is not the only team you have to lead.
       </StoryP>
     </div>
-    <div style={{ width: '80%', margin: 'auto' }}>
+    <div style={{ width: '80%' }}>
       <MainPb>
-        How can we increase the self-sufficiency 
+        How can we increase the self-sufficiency
         and efficiency of your astronauts ?
       </MainPb>
     </div>

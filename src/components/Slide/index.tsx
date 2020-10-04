@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
+// import ArmModel from '../Model/Arm';
 import CamModel from '../Model/IRCam';
 import HudModel from '../Model/Hud';
-import ArmModel from '../Model/Arm';
 import ArmLidarModel from '../Model/ArmLidar';
+// import LaserModel from '../Model/Laser';
+// import VirtualAssistantModel from '../Model/VirtualAssistant';
 
 const MyStyleSlide = styled.div`
   margin-top: 5%;
@@ -55,11 +57,11 @@ const MySlide = ({ title, paragraph, preview }: SlideProps): JSX.Element => {
       case 'Laser':
         return <CamModel />;
       case 'Robotic Arm':
-        return <ArmModel />;
+        return <ArmLidarModel />;
       case 'Interface':
-        return <ArmLidarModel />;
+        return <CamModel />;
       case 'Virtual assistant':
-        return <ArmLidarModel />;
+        return <CamModel />;
       case 'Helmet HUD':
         return <HudModel />;
     }

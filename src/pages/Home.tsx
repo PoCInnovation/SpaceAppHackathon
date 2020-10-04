@@ -1,6 +1,8 @@
 import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { Header } from '../components/Header';
+import HudModel from '../components/Model/Hud';
+import IRCamModel from '../components/Model/IRCam';
 
 const Container = styled.div`
   background: black;
@@ -45,13 +47,14 @@ const Title = styled.h1`
   font-size: 5em;
   z-index: 2;
   color: white;
+  font-family: 'Righteous', sans-serif;
 `;
 
 const SubTitle = styled.h2`
   font-size: 3em;
   z-index: 2;
   color: white;
-  text-align: justify;
+  /* text-align: justify; */
 `;
 
 function Home(): JSX.Element {
@@ -65,7 +68,7 @@ function Home(): JSX.Element {
         rel="noreferrer"
         target="_blank"
       >
-        <img alt="poc" src="/logo.png" style={{ width: '20%', height: '20%' }} />
+        <img alt="poc" src="/poc_logo.png" style={{ width: '20%', height: '20%' }} />
       </LogoView>
       <Container style={{ flexDirection: 'row', width: '100%', height: '50%', marginTop: '5%', backgroundImage: 'url(/star.png)', backgroundAttachment: 'fixed', position: 'relative' }}>
         <LeftView>
@@ -73,7 +76,7 @@ function Home(): JSX.Element {
           <SubTitle style={{ marginLeft: '10%' }}>Do not consider your suit solely for survival, let it become a tool. </SubTitle>
         </LeftView>
         <RightView>
-          <Astro style={{ right: '10%' }}>
+          <Astro style={{ left: '10%' }}>
             <img alt="astronaute" src="/astro_1.png" style={{ width: '90%', height: '90%' }} />
           </Astro>
         </RightView>
@@ -83,7 +86,8 @@ function Home(): JSX.Element {
       </Container>
       <Container style={{ flexDirection: 'row', height: '50%', color: 'white', backgroundImage: 'url(/moon.png)', backgroundSize: 'cover', backgroundPosition: 'bottom', backgroundRepeat: 'no-repeat  ' }}>
         <LeftView style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <iframe title="video" width="700" height="405" src="https://www.youtube.com/embed/pVddPNSzjZI" allowFullScreen />
+          {/* <iframe title="video" width="700" height="405" src="https://www.youtube.com/embed/pVddPNSzjZI" allowFullScreen /> */}
+          <IRCamModel />
         </LeftView>
         <RightView>
           <Astro style={{ right: '10%', top: '5%' }} ref={endRef}>

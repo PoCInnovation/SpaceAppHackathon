@@ -47,6 +47,7 @@ const Title = styled.h1`
   font-size: 5em;
   z-index: 2;
   color: white;
+  font-family: 'Righteous', sans-serif;
 `;
 
 const SubTitle = styled.h2`
@@ -67,15 +68,15 @@ function Home(): JSX.Element {
         rel="noreferrer"
         target="_blank"
       >
-        <img alt="poc" src="/logo.png" style={{ width: '20%', height: '20%' }} />
+        <img alt="poc" src="/poc_logo.png" style={{ width: '20%', height: '20%' }} />
       </LogoView>
       <Container style={{ flexDirection: 'row', width: '100%', height: '50%', marginTop: '5%', backgroundImage: 'url(/star.png)', backgroundAttachment: 'fixed', position: 'relative' }}>
         <LeftView>
-          <Title style={{ marginLeft: '10%', marginTop: '10%' }}>Test</Title>
+          <Title style={{ marginLeft: '10%', marginTop: '10%' }}>Caelus</Title>
           <SubTitle style={{ marginLeft: '10%' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tincidunt fringilla augue, at pulvinar tellus egestas ac. Cras suscipit viverra tortor non interdum. Donec efficitur volutpat lacinia. </SubTitle>
         </LeftView>
         <RightView>
-          <Astro style={{ right: '10%' }}>
+          <Astro style={{ left: '10%' }}>
             <img alt="astronaute" src="/astro_1.png" style={{ width: '90%', height: '90%' }} />
           </Astro>
         </RightView>

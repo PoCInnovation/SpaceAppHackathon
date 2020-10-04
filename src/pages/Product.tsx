@@ -70,7 +70,7 @@ function Product(): JSX.Element {
       >
         <StoryView>
           <Title>HISTOIRE</Title>
-          <div style={{ margin: 'auto', width: '85%' }}>
+          <div style={{ margin: 'auto', width: '50%', textAlign: 'justify' }}>
             <StoryP>
               Vous êtes une agence spatiale et le programme Artémis est en place. Depuis la Terre,
               vous supervisez une mission sur la Lune. Votre groupe d'astronautes se prépare pour

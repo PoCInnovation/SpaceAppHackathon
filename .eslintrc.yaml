@@ -23,4 +23,5 @@ rules:
   react/require-default-props: off
   react/jsx-one-expression-per-line: off
   import/prefer-default-export: off
+  no-use-before-define: 0
   "@typescript-eslint/explicit-function-return-type": "off"

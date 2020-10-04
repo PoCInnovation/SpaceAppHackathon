@@ -2,7 +2,24 @@ import React, { Suspense, useRef } from 'react';
 import { Canvas, useFrame, useLoader } from 'react-three-fiber';
 import { OrbitControls } from 'drei';
 
+import styled from 'styled-components';
+
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+
+const ModelStyle = styled.div`
+  display: flex;
+  align-content: center;
+  justify-content: center;
+
+  width: 80%;
+  height: 50%;
+
+  border: 1px;
+  border-style: solid;
+  border-color: white;
+
+  margin-bottom: 15%;
+`;
 
 function Model(): JSX.Element {
   const gltf = useLoader(GLTFLoader, 'test.glb');
@@ -24,8 +41,8 @@ function Model(): JSX.Element {
 
 export default function ModelRender(): JSX.Element {
   return (
-    <div className="model">
-      <Canvas camera={{ position: [10, 0, 0]}}>
+    <ModelStyle>
+      <Canvas camera={{ position: [10, 0, 0] }}>
         <ambientLight intensity={0.5} />
         <spotLight intensity={0.8} position={[300, 300, 400]} />
         <OrbitControls
@@ -52,6 +69,6 @@ export default function ModelRender(): JSX.Element {
           </mesh>
         </Suspense>
       </Canvas>
-    </div>
+    </ModelStyle>
   );
 }

@@ -2,14 +2,18 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Question = styled.p`
+  margin: 1em;
   font-size: 1.5em;
   font-weight: bold;
   color: black;
+  text-align: justify;
 `;
 
 const Answer = styled.p`
+  margin: 1em;
   font-size: 18px;
   color: black;
+  text-align: justify;
 `;
 
 const FaqView = styled.div`

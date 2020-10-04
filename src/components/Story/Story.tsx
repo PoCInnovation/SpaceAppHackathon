@@ -31,9 +31,7 @@ const Story = ():JSX.Element => (
   <StoryView style={{ height: '100%' }}>
     <Title>Story</Title>
     <div style={{ margin: 'auto', width: '60%', textAlign: 'justify' }}>
-      {
-        storyJson.map((item) => <StoryP>{item}</StoryP>)
-      }
+      {storyJson.map((item) => <StoryP>{item}</StoryP>)}
     </div>
     <div style={{ width: '80%' }}>
       <MainPb>

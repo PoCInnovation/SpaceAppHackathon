@@ -107,7 +107,7 @@ function Product(): JSX.Element {
         rel="noreferrer"
         target="_blank"
       >
-        <img alt="poc" src="/logo.png" style={{ width: '20%', height: '20%' }} />
+        <img alt="poc" src="/poc_logo.png" style={{ width: '20%', height: '20%' }} />
       </LogoView>
     </Container>
   );

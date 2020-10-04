@@ -64,35 +64,33 @@ function Product(): JSX.Element {
         flexDirection: 'column',
         width: '100%',
         height: '100%',
-        marginTop: '5%'
-      }}
+        marginTop: '5%',
+        background: 'black url(/star.png) fixed' }}
       >
         <StoryView style={{ height: '100%' }}>
           <Title>HISTOIRE</Title>
           <div style={{ margin: 'auto', width: '70%', textAlign: 'justify' }}>
             <StoryP>
-              Vous êtes une agence spatiale et le programme Artémis est en place. Depuis la Terre,
-              vous supervisez une mission sur la Lune. Votre groupe d'astronautes se prépare pour
-              aller effectuer une analyse minéralogique d'un cratère situé à 8 Km de leur position.
+              You are a space Agency and the Artemis program is in place. From Earth, you oversee a mission on the Moon.
             </StoryP>
 
             <StoryP>
-              Pour effectuer cette mission, vos astronautes vont avoir besoins de votre supervision pour se rendre
-              au point d'intérêt, pour se déplacer, s'orienter et installer le matériel.
+              Your team of astronauts is getting ready to perform a geological analysis of a crater 8 Km away from their position.
             </StoryP>
 
             <StoryP>
-              Lorsqu'ils montent sur le Rover, vous aller les guider, tournant par tournant, cratère par cratère,
-              à l’affût de la moindre erreur.
+              To carry the mission out, your astronauts needs your supervision to get around, orient themselves and establish the equipment.
             </StoryP>
             <StoryP>
-              Une fois arrivés sur place, vous leur dictez le protocol d'installation du matériel étape par étape.
-              L'analyse poura alors commencer.
+              When they get on the Rover, you guide them, turn by turn, crater by crater, on the lookout for the slightest mistake.
             </StoryP>
             <StoryP>
-              Résultat, vous avez dû passer plusieurs heures à superviser l'équipe. Cependant, vous n'avez pas que cette équipe à encadrer.
+              Once arrived, you dictate them the installation protocol, step by step. The analysis can then begin.
             </StoryP>
-            <MainPb>N'y aurait-il pas moyen d'améliorer l'autonomie et l'efficacité des astronautes ?</MainPb>
+            <StoryP>
+              As a result, you spent multiples hours overseeing the team. However, it is not the only team you have to lead.
+            </StoryP>
+            <MainPb>How can we increase the self-sufficiency and efficiency of your astronauts ?</MainPb>
           </div>
           <ArrowView onClick={() => endRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })}>
             <img alt="arrow" src="/down-arrow.svg" width="50" height="50" />
